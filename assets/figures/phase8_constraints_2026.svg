@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="650" viewBox="0 0 1100 650">
+<rect width="1100" height="650" fill="white"/>
+<text x="550" y="45" text-anchor="middle" font-family="Arial" font-size="28" font-weight="700">Inflation models and 2026 observational benchmarks</text>
+<text x="550" y="75" text-anchor="middle" font-family="Arial" font-size="14">Compressed diagnostic; full likelihood analyses require experiment covariance and nuisance parameters</text>
+<rect x="487" y="105" width="126" height="420" fill="#d8d8d8" opacity="0.65"/>
+<rect x="606" y="105" width="114" height="420" fill="#bdbdbd" opacity="0.32"/>
+<rect x="95" y="443" width="905" height="82" fill="#ededed"/>
+<line x1="95" y1="525" x2="1000" y2="525" stroke="#222" stroke-width="2"/>
+<line x1="95" y1="105" x2="95" y2="525" stroke="#222" stroke-width="2"/>
+<path d="M255 150 C335 180,405 220,475 260 C535 295,580 320,625 345" fill="none" stroke="#222" stroke-width="4"/>
+<path d="M475 493 C530 496,590 499,650 501 C700 503,750 504,795 505" fill="none" stroke="#777" stroke-width="4" stroke-dasharray="10 7"/>
+<circle cx="570" cy="205" r="7" fill="#222"/>
+<text x="588" y="205" font-family="Arial" font-size="13">quadratic, N=60: r = 0.132</text>
+<circle cx="650" cy="501" r="7" fill="#777"/>
+<text x="668" y="498" font-family="Arial" font-size="13">Starobinsky-type, N=60: r = 0.0030</text>
+<text x="550" y="570" text-anchor="middle" font-family="Arial" font-size="14">scalar spectral index n_s</text>
+<text x="30" y="330" transform="rotate(-90 30 330)" text-anchor="middle" font-family="Arial" font-size="14">tensor-to-scalar ratio r</text>
+<text x="115" y="474" font-family="Arial" font-size="12">r &lt; 0.034 benchmark region</text>
+<text x="490" y="132" font-family="Arial" font-size="12">CMB n_s</text>
+<text x="612" y="155" font-family="Arial" font-size="12">CMB + DESI n_s</text>
+<text x="550" y="615" text-anchor="middle" font-family="Arial" font-size="12">CMB synthesis: n_s=0.9682 +/- 0.0032; CMB+DESI: n_s=0.9728 +/- 0.0029; r&lt;0.034 in the cited 2026 synthesis.</text>
+</svg>
