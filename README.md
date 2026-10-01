@@ -1,26 +1,62 @@
 # Multiverse Cosmology Lab
 
-**Author: Biswajit Jana · v1.0.0 · 2026**
+**Biswajit Jana · 2026**
 
-[**🌌 Open the live research website →**](https://biswajit1999.github.io/Multiverse/)
+[**Open the live 3D research story →**](https://biswajit1999.github.io/Multiverse/)
 
-> ## One-word working answer: **Inflation**
+> # Working answer: **INFLATION**
 >
-> In this project, **inflation followed by reheating** is the leading working mechanism for producing the hot Big Bang because it connects pre-hot-Big-Bang dynamics to calculable observables. This is a research conclusion, not proof of an absolute beginning or direct evidence for a multiverse.
+> **More precisely:** inflation followed by reheating is the strongest testable bridge found in this project between a pre-hot-Big-Bang state and the hot, structured universe we observe. That is an author synthesis from the implemented theory + simulations + current data — not proof that inflation is the unique history of nature.
 
-![Origin-model comparison](assets/concepts/pre_big_bang_scenarios.jpg)
+![From inflation to the hot Big Bang](assets/generated/handdrawn_inflation_to_big_bang.jpg)
 
-A research-driven computational project asking a precise question:
+## The problem I am trying to solve
 
-> **What physical mechanisms could generate the hot Big Bang state, what do their equations predict, and can observations distinguish them?**
+The hot Big Bang tells us how an early hot, dense universe evolves. It does **not** by itself tell us what physical process produced that state.
 
-The project combines theory, numerical simulations, public CMB data, current inflation constraints and explicit failure conditions. The public website is written as an editorial research notebook rather than a generic project landing page.
+Instead of ending with a catalogue of theories, this repository asks a sequence of answerable questions:
 
-This repository does **not** assume that a multiverse exists. It treats eternal inflation, false-vacuum bubbles, quantum-cosmology boundary conditions, bounces and cyclic histories as competing model classes whose assumptions and consequences can be calculated.
+1. **What does the Big Bang model actually begin with?**
+2. **Can an earlier dynamical state generate that hot radiation bath?**
+3. **Which candidate histories make observable predictions?**
+4. **What do CMB measurements already reject?**
+5. **Does a successful inflationary history imply a multiverse?**
+6. **What observation would force the working conclusion to change?**
 
-## Current research status — Phase 10 / 10
+Read the full [question-ledger](RESEARCH_QUESTIONS.md) or the [integrated report](REPORT.md).
 
-**v1.0 is complete as a research framework.** The repository now spans FLRW background cosmology, inflation and reheating, causal horizons, primordial perturbations, false-vacuum decay and Coleman–De Luccia diagnostics, effective bounces, Wheeler–DeWitt minisuperspace, current observational constraints, reproducible benchmark results, continuous testing, and an interactive research website.
+## Evidence chain
+
+`pre-hot state → inflation → quantum fluctuations → reheating → hot Big Bang → CMB → galaxies`
+
+At $N=60$, the current implementation gives:
+
+| Inflationary model | $n_s$ | $r$ | Reading against current benchmark |
+|---|---:|---:|---|
+| Quadratic $V\propto\phi^2$ | 0.96694 | 0.13223 | tensor prediction too large |
+| Starobinsky-type plateau | 0.96783 | 0.002964 | remains in the low-$r$ region |
+
+The live site also plots the released NASA/LAMBDA TT-spectrum data used for Planck 2018 + ACT DR6 visualization.
+
+![Inflation models in the light of observations](assets/generated/observational_constraints.jpg)
+
+## Why the answer is not simply “multiverse”
+
+Some inflationary models enter a self-reproducing stochastic regime,
+
+$$
+\mathcal R_{\rm EI}
+\simeq
+\frac{3H^3}{2\pi|V_{,\phi}|},
+$$
+
+which can produce causally separated reheating regions. That makes a multiverse a possible **consequence of some models**, not an observed premise and not the project's starting answer.
+
+![Conceptual bubble-universe flow](assets/generated/hero_bubble_universes.jpg)
+
+## Research archive and reproducibility
+
+The current release is a complete research framework rather than a claim that the origin problem itself is solved. The repository now spans FLRW background cosmology, inflation and reheating, causal horizons, primordial perturbations, false-vacuum decay and Coleman–De Luccia diagnostics, effective bounces, Wheeler–DeWitt minisuperspace, current observational constraints, reproducible benchmark results, continuous testing, and an interactive research website.
 
 Completion here does **not** mean that the origin of the universe or the multiverse has been solved. It means the original broad question has been decomposed into explicit equations, numerical experiments, observable discriminants, and stated failure conditions.
 
