@@ -1,4 +1,6 @@
-# Research Report — Cosmic Origins, the Hot Big Bang, and Multiverse Cosmology
+# Integrated Research Report — Cosmic Origins and Multiverse Cosmology
+
+**Multiverse Cosmology Lab v1.0 · 2026**
 
 **Author: Biswajit Jana**
 
@@ -377,3 +379,155 @@ Inflation plus reheating provides a concrete mechanism for producing a hot Big B
 11. Planck Collaboration, *Planck 2018 results. X. Constraints on inflation*, A&A **641**, A10 (2020), arXiv:1807.06211.
 12. BICEP/Keck Collaboration, *Improved Constraints on Primordial Gravitational Waves ... through the 2018 Observing Season*, Phys. Rev. Lett. **127**, 151301 (2021), DOI: 10.1103/PhysRevLett.127.151301.
 13. M. Tegmark, *Parallel Universes*, arXiv:astro-ph/0302131 (taxonomy/review; not itself evidence for a multiverse).
+
+
+---
+
+## 9. Phase 6: false-vacuum decay as a calculable origin mechanism
+
+A bubble-universe picture is scientifically meaningful only after specifying a field potential and solving, or approximating, the Euclidean tunnelling problem. For an $O(4)$-symmetric geometry,
+
+$$
+ds_E^2=d\xi^2+\rho^2(\xi)d\Omega_3^2,
+$$
+
+the coupled equations are
+
+$$
+\phi''+3\frac{\rho'}{\rho}\phi'=V_{,\phi},
+$$
+
+$$
+\rho''=-\frac{\rho}{3M_{\rm Pl}^2}\left(\phi'^2+V\right),
+$$
+
+with gravitational constraint
+
+$$
+\rho'^2=1+\frac{\rho^2}{3M_{\rm Pl}^2}\left(\frac12\phi'^2-V\right).
+$$
+
+The release code implements these trajectories and verifies the exact constant-de-Sitter geometry as a numerical benchmark. It also implements the flat thin-wall expressions
+
+$$
+R_{\rm tw}=\frac{3\sigma}{\Delta V},
+\qquad
+B_{\rm tw}=\frac{27\pi^2\sigma^4}{2\Delta V^3},
+$$
+
+the Hawking–Moss exponent
+
+$$
+B_{\rm HM}=24\pi^2M_{\rm Pl}^4\left(\frac1{V_f}-\frac1{V_{\rm top}}\right),
+$$
+
+and the Fubini–Lipatov analytic action $8\pi^2/(3\lambda)$.
+
+For the repository's transparent tilted-double-well example, the deterministic release calculation gives a Hawking–Moss exponent of about $628.36$ and a much larger flat thin-wall estimate of about $1.33\times10^6$. These are **toy-potential diagnostics**, not decay-rate estimates for our observed vacuum.
+
+The generic gravitational Coleman–De Luccia solution remains potential dependent. Existence, boundary conditions, fluctuation determinants and negative modes must be checked before a semiclassical trajectory can be treated as a valid decay saddle.
+
+## 10. Eternal inflation and the probability problem
+
+During slow roll, quantum fluctuations over one Hubble time are approximately
+
+$$
+\delta\phi_q\simeq\frac{H}{2\pi},
+$$
+
+while the classical drift is
+
+$$
+\delta\phi_{\rm cl}\simeq\frac{|V_{,\phi}|}{3H^2}.
+$$
+
+The local ratio
+
+$$
+\mathcal R_{\rm EI}
+=\frac{3H^3}{2\pi|V_{,\phi}|}
+$$
+
+is implemented as a self-reproduction diagnostic. Values above unity identify the usual local heuristic regime in which stochastic fluctuations can dominate classical rolling.
+
+This does not produce a unique probability distribution over pocket universes. In an eternally inflating spacetime, naive event counts diverge, and relative probabilities depend on the regulator or **measure**. The measure problem is therefore a central unresolved limitation, not a technical footnote.
+
+## 11. Phase 7: quantum cosmology
+
+Canonical quantum gravity formally imposes
+
+$$
+\hat{\mathcal H}\Psi=0.
+$$
+
+The repository uses a one-dimensional closed-de-Sitter minisuperspace toy model,
+
+$$
+\left[-\frac{d^2}{da^2}+U(a)\right]\Psi(a)=0,
+\qquad
+U(a)=a^2-\lambda a^4.
+$$
+
+Its classical turning point is $a_t=\lambda^{-1/2}$. The WKB barrier action has the exact value
+
+$$
+I=\int_0^{a_t}\sqrt{U(a)}\,da=\frac{1}{3\lambda}.
+$$
+
+For the release benchmark $\lambda=0.2$, the numerical code returns $I=1.666666\ldots$, reproducing the analytic result.
+
+No-boundary and tunnelling prescriptions are represented through semiclassical log-weight conventions, but the project intentionally does not convert these into literal cosmological probabilities without an explicit interpretation, inner product, contour and measure.
+
+## 12. Phase 8: current observational model comparison
+
+The release stores versioned compressed observational benchmarks rather than silently hard-coding a single historical dataset.
+
+A 2026 synthesis of Planck, SPT, ACT and BICEP/Keck reports
+
+$$
+n_s=0.9682\pm0.0032,
+\qquad
+r<0.034\quad(95\%\;\mathrm{CL}),
+$$
+
+for its cited CMB combination. Adding DESI BAO shifts the reported scalar index to
+
+$$
+n_s=0.9728\pm0.0029,
+$$
+
+with little change to the tensor limit in that analysis.
+
+At $N=60$, the repository's first-order slow-roll calculation gives
+
+$$
+(n_s,r)_{\phi^2}\approx(0.96694,0.13223),
+$$
+
+and
+
+$$
+(n_s,r)_{\rm Starobinsky}\approx(0.96783,0.002964).
+$$
+
+The quadratic tensor prediction lies far above the current quoted bound. The plateau model remains at low $r$, although the DESI-associated upward shift in $n_s$ makes the detailed scalar-tilt comparison dataset dependent. These are compressed diagnostics; a publication-grade parameter inference would require full experiment likelihoods, covariance, nuisance parameters and a consistent cosmological parameter model.
+
+## 13. Phase 9–10: research interface and reproducibility
+
+The repository now includes eight notebooks, scientific visualization scripts, an interactive static research website, continuous-integration tests, versioned observational inputs, deterministic benchmark output, a model-status matrix and explicit reproducibility instructions.
+
+The complete local v1.0 test suite contains **29 passing tests**. Benchmarks include analytic slow-roll relations, the de-Sitter Mukhanov–Sasaki solution, effective-bounce limits, Fubini–Lipatov action, the Euclidean de-Sitter CDL geometry and constraint, the Wheeler–DeWitt WKB integral, and observational-constraint logic.
+
+## 14. Integrated answer to “why did the Big Bang happen?”
+
+The strongest scientifically defensible answer remains conditional.
+
+**Inflation plus reheating** provides a concrete dynamical route from a vacuum-dominated phase into a hot radiation bath. **False-vacuum decay** can generate bubble interiors in specified scalar potentials and, when embedded in an eternally inflating background, can yield many causally disconnected reheating regions. **Bounce and cyclic frameworks** replace the classical singular boundary with an earlier contracting phase. **Quantum cosmology** replaces an ordinary classical initial condition with a wave function or boundary prescription.
+
+What current physics does **not** provide is a unique empirically established selection among these mechanisms, a direct observation of another universe, or a theorem converting past geodesic incompleteness into a proof of creation from literal nothing.
+
+The research problem is therefore now expressed operationally:
+
+> For each proposed extension of the hot Big Bang, derive its assumptions and equations, solve the relevant boundary/initial-value problem, calculate observable predictions, specify failure conditions, and compare them with data and competing models.
+
+That is the completed v1.0 framework. The remaining frontier is genuine open research rather than missing repository structure.
