@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "multiverse-cosmology-lab"
-version = "0.5.0"
-description = "Research and numerical experiments in early-universe and multiverse cosmology."
+version = "1.0.0"
+description = "Computational research framework for cosmic origins, inflation, vacuum decay and quantum cosmology."
 requires-python = ">=3.10"
 dependencies = [
   "numpy>=2.0",
