@@ -38,7 +38,7 @@ const DATASETS={
   BB:{
     title:"Observed CMB B-mode polarization measurements",
     url:"https://lambda.gsfc.nasa.gov/graphics/bb_upperlimits/bb_data_2021apr_csv_format.dat",
-    fallback:"https://lambda.gsfc.nasa.gov/graphics/bb_upperlimits/bb_upperlimits_2021apr_2048.png",
+    fallback:"https://lambda.gsfc.nasa.gov/graphics/bb_upperlimits/bb_limits_2021_apr_2048.png",
     caption:"B-mode detections and upper limits in the public LAMBDA plotting table. B modes contain lensing and foreground contributions; this panel is not a direct primordial-tensor measurement.",
     ylabel:"DℓBB  [μK²]",
     xmin:20,xmax:2200,ymin:1e-4,ymax:10,logY:true,parser:"csv"
