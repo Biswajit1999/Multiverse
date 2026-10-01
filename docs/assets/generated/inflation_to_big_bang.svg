@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" role="img" aria-labelledby="t d">
+<title id="t">From inflation to the hot Big Bang</title><desc id="d">Hand-drawn-style scientific schematic showing slow-roll inflation, reheating, a hot radiation dominated universe, and later CMB and structure.</desc>
+<defs>
+ <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".015" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="1.7"/></filter>
+ <linearGradient id="arrow" x1="0" x2="1"><stop stop-color="#627fc7"/><stop offset=".48" stop-color="#e6a86d"/><stop offset="1" stop-color="#233a6c"/></linearGradient>
+</defs>
+<rect width="1400" height="820" fill="#f4f0e7"/>
+<g filter="url(#rough)" stroke="#222" fill="none" stroke-width="2">
+ <line x1="70" y1="140" x2="1330" y2="140"/>
+ <path d="M90 680 C260 620 315 640 390 650 C510 666 610 610 720 560 C850 500 1010 500 1310 415" stroke="url(#arrow)" stroke-width="46" opacity=".35"/>
+</g>
+<g font-family="Georgia,serif" fill="#1b1d21">
+ <text x="70" y="75" font-size="46" font-style="italic">From inflation to the hot Big Bang</text>
+ <text x="70" y="115" font-size="20">a calculated physical chain, not a creation myth</text>
+</g>
+<g font-family="Arial,sans-serif">
+ <g transform="translate(70 175)"><circle cx="34" cy="22" r="20" fill="none" stroke="#2b3340" stroke-width="2"/><text x="34" y="29" text-anchor="middle" font-size="20">1</text><text x="70" y="28" font-size="26" font-weight="700">Slow-roll inflation</text>
+ <path d="M10 210 C60 130 115 115 165 160 C215 210 240 280 320 285" fill="none" stroke="#567ac1" stroke-width="4"/><circle cx="118" cy="145" r="10" fill="#567ac1"/><path d="M120 145 l55 62" stroke="#222" stroke-width="2"/><text x="25" y="340" font-size="20">εᵥ, |ηᵥ| ≪ 1</text><text x="25" y="375" font-size="18">accelerated expansion</text></g>
+ <g transform="translate(410 175)"><circle cx="34" cy="22" r="20" fill="none" stroke="#2b3340" stroke-width="2"/><text x="34" y="29" text-anchor="middle" font-size="20">2</text><text x="70" y="28" font-size="26" font-weight="700">Reheating</text>
+ <path d="M20 210 C45 70 65 355 90 145 C115 80 145 330 170 175 C190 130 225 270 250 190 C275 165 300 220 325 200" fill="none" stroke="#b64d36" stroke-width="4"/><text x="20" y="340" font-size="20">ρφ → ρR</text><text x="20" y="375" font-size="18">particle production / thermalization</text></g>
+ <g transform="translate(760 175)"><circle cx="34" cy="22" r="20" fill="none" stroke="#2b3340" stroke-width="2"/><text x="34" y="29" text-anchor="middle" font-size="20">3</text><text x="70" y="28" font-size="26" font-weight="700">Hot radiation era</text>
+ <rect x="18" y="90" width="280" height="235" rx="18" fill="#efdba8" opacity=".55" stroke="#c68748"/><g fill="#c65345"><circle cx="60" cy="145" r="8"/><circle cx="135" cy="225" r="7"/><circle cx="235" cy="135" r="8"/><circle cx="205" cy="275" r="6"/></g><g fill="#467db6"><circle cx="100" cy="285" r="7"/><circle cx="175" cy="165" r="8"/><circle cx="270" cy="245" r="7"/></g><path d="M52 200 q25 -30 50 0 t50 0" fill="none" stroke="#cf6c35" stroke-width="3"/><text x="20" y="365" font-size="20">p = ρ/3,  T ∝ a⁻¹</text></g>
+ <g transform="translate(1080 175)"><circle cx="34" cy="22" r="20" fill="none" stroke="#2b3340" stroke-width="2"/><text x="34" y="29" text-anchor="middle" font-size="20">4</text><text x="70" y="28" font-size="26" font-weight="700">Relics</text>
+ <ellipse cx="145" cy="190" rx="120" ry="76" fill="#d5e2ef" stroke="#315e82"/><g fill="#c96e3c" opacity=".75"><circle cx="82" cy="168" r="6"/><circle cx="158" cy="143" r="5"/><circle cx="200" cy="209" r="7"/></g><g fill="#376aa0" opacity=".8"><circle cx="118" cy="222" r="5"/><circle cx="210" cy="170" r="5"/><circle cx="65" cy="205" r="4"/></g><text x="35" y="310" font-size="18">CMB anisotropy ~ 10⁻⁵</text><text x="35" y="345" font-size="18">later galaxies + cosmic web</text></g>
+</g>
+<g font-family="Georgia,serif" font-size="18" fill="#222">
+ <text x="84" y="750">quantum fluctuations</text><text x="355" y="750">inflation</text><text x="550" y="750">reheating</text><text x="750" y="750">hot Big Bang</text><text x="1010" y="750">CMB</text><text x="1210" y="750">structure</text>
+</g>
+</svg>
