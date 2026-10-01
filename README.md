@@ -204,6 +204,14 @@ The code now includes these Coleman–De Luccia trajectory equations, thin-wall 
 
 The observational layer stores versioned 2026 compressed constraints instead of treating one data combination as timeless. See [theory/15_observational_status_2026.md](theory/15_observational_status_2026.md) and [data/constraints_2026.json](data/constraints_2026.json).
 
+![False-vacuum decay diagnostics](assets/figures/phase6_vacuum_decay.svg)
+
+![Wheeler-DeWitt minisuperspace benchmark](assets/figures/phase7_wdw.svg)
+
+![2026 inflation constraints](assets/figures/phase8_constraints_2026.svg)
+
+The static interactive research interface is maintained in [docs/](docs/) and includes a live slow-roll e-fold explorer.
+
 ## What "before the Big Bang" can mean
 
 The phrase may refer to an earlier classical phase, inflation before reheating, contraction before a bounce, an inflating false vacuum outside a bubble, a quantum boundary rather than earlier classical time, or no classical "before" at all in a particular proposal.
