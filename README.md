@@ -54,29 +54,29 @@ Multiverse/
 
 ### 1. FLRW / Friedmann evolution
 
-\[
-H^2(a)=H_0^2\left(\Omega_r a^{-4}+\Omega_m a^{-3}+\Omega_k a^{-2}+\Omega_\Lambda\right),
-\]
+$$
+H^2(a)=H_0^2\left(\Omega_r a^{-4}+\Omega_m a^{-3}+\Omega_k a^{-2}+\Omega_\Lambda\right)
+$$
 
 with
 
-\[
-\dot a = aH(a).
-\]
+$$
+\dot a = aH(a)
+$$
 
-The notebook numerically integrates the background scale-factor evolution and visualizes \(a(t)\).
+The notebook numerically integrates the background scale-factor evolution and visualizes $a(t)$.
 
 ### 2. Scalar-field inflation
 
-For a homogeneous canonical inflaton \(\phi\),
+For a homogeneous canonical inflaton $\phi$,
 
-\[
-\ddot\phi+3H\dot\phi+V_{,\phi}=0,
-\]
+$$
+\ddot\phi+3H\dot\phi+V_{,\phi}=0
+$$
 
-\[
-H^2=\frac{1}{3M_{\rm Pl}^2}\left(\frac{1}{2}\dot\phi^2+V(\phi)\right).
-\]
+$$
+H^2=\frac{1}{3M_{\rm Pl}^2}\left(\frac{1}{2}\dot\phi^2+V(\phi)\right)
+$$
 
 The starter implementation uses a quadratic toy potential for pedagogy. It is **not** presented as the preferred observational model.
 
