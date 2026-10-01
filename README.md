@@ -1,6 +1,6 @@
 # Multiverse Cosmology Lab
 
-**Author: Biswajit Jana**
+**Author: Biswajit Jana · v1.0.0 · 2026**
 
 A research-driven computational project asking a precise question:
 
@@ -8,15 +8,13 @@ A research-driven computational project asking a precise question:
 
 This repository does **not** assume that a multiverse exists. It treats eternal inflation, false-vacuum bubbles, quantum-cosmology boundary conditions, bounces and cyclic histories as competing model classes whose assumptions and consequences can be calculated.
 
-## Current research status — Phase 5 / 10
+## Current research status — Phase 10 / 10
 
-The project has moved beyond the initial cosmology scaffold. It now contains background dynamics, reheating and bounce models, causal-horizon calculations, inflationary parameter sweeps, first-order primordial observables and a numerical Mukhanov-Sasaki benchmark.
+**v1.0 is complete as a research framework.** The repository now spans FLRW background cosmology, inflation and reheating, causal horizons, primordial perturbations, false-vacuum decay and Coleman–De Luccia diagnostics, effective bounces, Wheeler–DeWitt minisuperspace, current observational constraints, reproducible benchmark results, continuous testing, and an interactive research website.
 
-The key Phase-5 question is no longer simply *"could this model exist?"* but:
+Completion here does **not** mean that the origin of the universe or the multiverse has been solved. It means the original broad question has been decomposed into explicit equations, numerical experiments, observable discriminants, and stated failure conditions.
 
-> **What does this model predict, and can those predictions survive observation?**
-
-See [ROADMAP.md](ROADMAP.md) and [RESULTS_PHASE5.md](RESULTS_PHASE5.md).
+See [ROADMAP.md](ROADMAP.md), [REPORT.md](REPORT.md), [RESEARCH_SUMMARY.md](RESEARCH_SUMMARY.md), [MODEL_STATUS.md](MODEL_STATUS.md), and [REPRODUCIBILITY.md](REPRODUCIBILITY.md).
 
 ## Central physical problem
 
@@ -148,7 +146,7 @@ For the current $k=1$ validation run, the numerical and analytic late-time ampli
 Implementation: [src/multiverse_cosmology/perturbations.py](src/multiverse_cosmology/perturbations.py)  
 Notebook: [code/notebooks/05_mukhanov_sasaki.ipynb](code/notebooks/05_mukhanov_sasaki.ipynb)
 
-## Other origin mechanisms under investigation
+## Additional origin mechanisms
 
 ### False-vacuum decay
 
@@ -178,6 +176,34 @@ $$
 
 The repository treats no-boundary and tunneling proposals as alternative boundary prescriptions to be investigated, not established descriptions of the origin of the universe.
 
+## Phase 6–8 — vacuum decay, quantum cosmology, and current data
+
+For an $O(4)$-symmetric Euclidean scalar–gravity system,
+
+$
+\phi''+3\frac{\rho'}{\rho}\phi'=V_{,\phi},
+\qquad
+\rho''=-\frac{\rho}{3M_{\rm Pl}^2}\left(\phi'^2+V\right),
+$
+
+with constraint
+
+$
+\rho'^2=1+\frac{\rho^2}{3M_{\rm Pl}^2}\left(\frac12\phi'^2-V\right).
+$
+
+The code now includes these Coleman–De Luccia trajectory equations, thin-wall and Hawking–Moss limits, a Fubini–Lipatov benchmark, and a stochastic self-reproduction diagnostic. It also includes a Wheeler–DeWitt minisuperspace solver with an analytic WKB check.
+
+![Conceptual bubble landscape](assets/concepts/bubble_universes.jpg)
+
+*Conceptual illustration only — not observational evidence of other universes.*
+
+![Model-dependent pre-Big-Bang scenarios](assets/concepts/pre_big_bang_scenarios.jpg)
+
+*Inflationary extension, nonsingular bounce, and cyclic evolution are distinct theoretical model classes.*
+
+The observational layer stores versioned 2026 compressed constraints instead of treating one data combination as timeless. See [theory/15_observational_status_2026.md](theory/15_observational_status_2026.md) and [data/constraints_2026.json](data/constraints_2026.json).
+
 ## What "before the Big Bang" can mean
 
 The phrase may refer to an earlier classical phase, inflation before reheating, contraction before a bounce, an inflating false vacuum outside a bubble, a quantum boundary rather than earlier classical time, or no classical "before" at all in a particular proposal.
@@ -196,14 +222,12 @@ See:
 Multiverse/
 ├── README.md
 ├── REPORT.md
-├── RESULTS_PHASE5.md
+├── RESEARCH_SUMMARY.md
+├── MODEL_STATUS.md
+├── REPRODUCIBILITY.md
 ├── ROADMAP.md
-├── theory/
-│   ├── 01_big_bang_and_horizons.md
-│   ├── ...
-│   ├── 09_horizons_and_causality.md
-│   ├── 10_inflation_model_discrimination.md
-│   └── 11_primordial_perturbations.md
+├── CHANGELOG.md
+├── theory/                    # 01–16 research chapters
 ├── src/multiverse_cosmology/
 │   ├── friedmann.py
 │   ├── inflation.py
@@ -212,21 +236,22 @@ Multiverse/
 │   ├── horizons.py
 │   ├── potentials.py
 │   ├── slowroll.py
-│   └── perturbations.py
-├── code/
-│   ├── notebooks/
-│   │   ├── 01_friedmann_scale_factor.ipynb
-│   │   ├── 02_scalar_field_inflation.ipynb
-│   │   ├── 03_horizon_structure.ipynb
-│   │   ├── 04_inflation_model_sweep.ipynb
-│   │   └── 05_mukhanov_sasaki.ipynb
-│   └── visualizations/
-├── assets/figures/
+│   ├── perturbations.py
+│   ├── vacuum_decay.py
+│   ├── quantum_cosmology.py
+│   └── constraints.py
+├── code/notebooks/           # 01–08 reproducible notebooks
+├── code/visualizations/
+├── data/constraints_2026.json
+├── results/benchmark_results.json
+├── scripts/run_phase10.py
+├── docs/                     # interactive research website
+├── assets/
 ├── tests/
 └── references/references.bib
 ~~~
 
-## Reproduce the calculations
+## Reproduce the v1.0 release
 
 ~~~bash
 python -m venv .venv
@@ -236,7 +261,9 @@ pytest
 jupyter lab
 ~~~
 
-The new Phase-4/5 numerical modules were locally validated with seven focused tests, including analytic slow-roll checks and numerical/analytic agreement for the de-Sitter mode equation.
+The complete v1.0 numerical suite was locally validated with **29 tests**, covering background dynamics, inflation, horizons, reheating, bounce dynamics, perturbations, false-vacuum decay limits, Euclidean gravitational constraints, Wheeler–DeWitt benchmarks, and observational-constraint logic.
+
+Run `python scripts/run_phase10.py` to regenerate the deterministic benchmark summary in `results/benchmark_results.json`.
 
 ## Scientific standard used here
 
@@ -262,5 +289,7 @@ See [references/references.bib](references/references.bib).
 ## Authorship
 
 **Biswajit Jana, 2026.**
+
+The repository is presented as a scientific research record: equations, assumptions, code, tests, figures, references, limitations, and versioned results are kept together.
 
 The purpose of this repository is to make the reasoning reproducible: equations, assumptions, numerical experiments, citations, tests and failure modes are kept together rather than presenting speculative cosmology as settled fact.
