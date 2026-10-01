@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="650" viewBox="0 0 1100 650">
+<rect width="1100" height="650" fill="white"/>
+<text x="550" y="45" text-anchor="middle" font-family="Arial" font-size="28" font-weight="700">False-vacuum decay: toy potential and semiclassical scales</text>
+<text x="550" y="75" text-anchor="middle" font-family="Arial" font-size="14">Tilted double-well used to validate the Phase-6 vacuum-decay machinery</text>
+<line x1="90" y1="535" x2="720" y2="535" stroke="#222" stroke-width="2"/><line x1="90" y1="110" x2="90" y2="535" stroke="#222" stroke-width="2"/>
+<path d="M110 190 C185 460,250 520,335 430 C410 350,435 245,500 190 C575 245,600 360,675 430 C735 485,775 420,790 315" transform="translate(-40,0)" fill="none" stroke="#222" stroke-width="4"/>
+<circle cx="225" cy="470" r="7" fill="#222"/><text x="190" y="500" font-family="Arial" font-size="13">true vacuum</text>
+<circle cx="460" cy="195" r="7" fill="#777"/><text x="420" y="170" font-family="Arial" font-size="13">barrier top</text>
+<circle cx="650" cy="445" r="7" fill="#222"/><text x="620" y="475" font-family="Arial" font-size="13">false vacuum</text>
+<text x="405" y="595" text-anchor="middle" font-family="Arial" font-size="15">scalar field φ</text><text x="30" y="330" transform="rotate(-90 30 330)" text-anchor="middle" font-family="Arial" font-size="15">V(φ)</text>
+<rect x="780" y="125" width="280" height="330" rx="10" fill="#f5f5f5" stroke="#aaa"/>
+<text x="920" y="165" text-anchor="middle" font-family="Arial" font-size="17" font-weight="700">Release diagnostics</text>
+<text x="810" y="210" font-family="Arial" font-size="14">ΔV ≈ 0.0500</text>
+<text x="810" y="242" font-family="Arial" font-size="14">σ ≈ 1.0575</text>
+<text x="810" y="274" font-family="Arial" font-size="14">Rₜw ≈ 63.45</text>
+<text x="810" y="306" font-family="Arial" font-size="14">Bₜw ≈ 1.33 × 10⁶</text>
+<text x="810" y="338" font-family="Arial" font-size="14">B_HM ≈ 628.36</text>
+<text x="810" y="390" font-family="Arial" font-size="12">Toy-potential numbers only.</text>
+<text x="810" y="412" font-family="Arial" font-size="12">Not a measured vacuum-decay rate.</text>
+<text x="550" y="630" text-anchor="middle" font-family="Arial" font-size="12">CDL trajectory equations, constraint checks, thin-wall, Hawking–Moss and Fubini benchmarks are implemented in src/multiverse_cosmology/vacuum_decay.py.</text>
+</svg>
