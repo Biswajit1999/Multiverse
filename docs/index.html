@@ -16,6 +16,17 @@
 <div class="cursor-orb" aria-hidden="true"></div>
 <div class="scroll-progress" id="progress"></div>
 
+<div class="authorbar">
+  <div class="shell authorbar-inner">
+    <span><b>Biswajit Jana</b> · Author &amp; researcher</span>
+    <div>
+      <a href="https://biswajit1999.github.io/Biswajit_Jana.github.io/">Author website ↗</a>
+      <a href="https://www.linkedin.com/in/biswajit-jana-27011a151/">LinkedIn ↗</a>
+      <a href="https://github.com/Biswajit1999">GitHub ↗</a>
+    </div>
+  </div>
+</div>
+
 <header class="topbar">
   <a class="brand" href="#top" aria-label="Multiverse Cosmology Lab home">
     <span class="brand-mark">MCL</span>
@@ -26,6 +37,7 @@
     <a href="#observatory">Data</a>
     <a href="#models">Models</a>
     <a href="#multiverse">Multiverse</a>
+    <a href="#report">Report</a>
     <a href="#verdict">Verdict</a>
   </nav>
   <a class="archive-link magnetic" href="https://github.com/Biswajit1999/Multiverse">Research archive ↗</a>
@@ -123,15 +135,15 @@
   <div class="shell">
     <div class="section-head wide reveal">
       <p class="eyebrow">COSMOLOGY DATA OBSERVATORY</p>
-      <h2>Paper-style spectra, multiple experiments, and a live residual diagnostic.</h2>
-      <p>The data interface now loads NASA/LAMBDA plotting tables for TT, TE, EE, gravitational lensing and B-mode measurements. The generated research imagery remains visually separate from measured data.</p>
+      <h2>CMB power spectra across multiple experiments, with live residual diagnostics.</h2>
+      <p>The data interface loads NASA/LAMBDA plotting tables for TT, TE, EE, gravitational lensing and B-mode measurements. Measured data, numerical calculations and conceptual illustrations are kept visibly separate.</p>
     </div>
 
     <div class="observatory-layout">
       <aside class="observatory-aside">
         <figure class="editorial-figure reveal parallax-card">
           <img class="research-image" loading="lazy" decoding="async" src="/Multiverse/assets/images/06_cmb_explainer.png" alt="Illustrated explainer of the cosmic microwave background and acoustic peaks">
-          <figcaption><b>Illustrative guide.</b> The live paper-style plot beside it is the measurement layer.</figcaption>
+          <figcaption><b>CMB overview.</b> This explainer shows the sky map, acoustic structure and physical interpretation; the live data plots below are the measurement layer.</figcaption>
         </figure>
         <div class="source-note glass-panel reveal">
           <span class="source-dot"></span>
@@ -290,6 +302,7 @@
 </section>
 
 <section id="multiverse" class="multiverse-section">
+  <canvas id="multiverseScene" aria-hidden="true"></canvas>
   <div class="shell">
     <div class="section-head reveal">
       <p class="eyebrow">WHERE THE MULTIVERSE ENTERS</p>
@@ -344,6 +357,33 @@
   </div>
 </section>
 
+
+<section id="report" class="report-section">
+  <canvas id="reportOrbit" aria-hidden="true"></canvas>
+  <div class="shell report-grid">
+    <article class="report-copy reveal">
+      <p class="eyebrow">LONG-FORM RESEARCH REPORT</p>
+      <h2>A chapter-by-chapter LaTeX monograph.</h2>
+      <p>The report expands the website into a readable research narrative: first the hot Big Bang, then inflation, quantum fluctuations, reheating, CMB evidence, model discrimination, vacuum decay, horizons, bounce/cyclic alternatives, quantum cosmology, the multiverse branch and the higher-dimensional “outside” question.</p>
+      <div class="report-chapters">
+        <span><b>18</b> chapters</span>
+        <span><b>20</b> conceptual figures</span>
+        <span><b>equations</b> with layman explanations</span>
+        <span><b>primary literature</b> cited throughout</span>
+      </div>
+      <div class="report-actions">
+        <a class="button primary magnetic" href="/Multiverse/report/Multiverse_Cosmology_Lab_Report.pdf">Open LaTeX PDF ↗</a>
+        <a class="button ghost magnetic" href="https://github.com/Biswajit1999/Multiverse/blob/main/docs/report/Multiverse_Cosmology_Lab_Report.tex">View LaTeX source ↗</a>
+      </div>
+      <p class="report-note">Authored by Biswajit Jana · © 2026. Conceptual figures are explicitly separated from observational data.</p>
+    </article>
+    <figure class="report-cover reveal" data-delay="70">
+      <img class="research-image" loading="lazy" src="/Multiverse/assets/images/20_current_research_verdict.png" alt="Current research verdict infographic used as the report cover visual">
+      <figcaption>Research synthesis figure used in the long-form report.</figcaption>
+    </figure>
+  </div>
+</section>
+
 <section id="verdict" class="verdict-section">
   <div class="shell verdict-grid">
     <div class="verdict-copy reveal">
@@ -375,8 +415,13 @@
 </main>
 
 <footer class="footer shell">
-  <div><b>Multiverse Cosmology Lab</b><span>Biswajit Jana · 2026</span></div>
-  <div><a href="#top">Back to top ↑</a><a href="https://github.com/Biswajit1999/Multiverse">GitHub ↗</a></div>
+  <div><b>Multiverse Cosmology Lab</b><span>© 2026 Biswajit Jana · Conceptual figures should be cited to this project when reused.</span></div>
+  <div>
+    <a href="https://biswajit1999.github.io/Biswajit_Jana.github.io/">Author website ↗</a>
+    <a href="https://www.linkedin.com/in/biswajit-jana-27011a151/">LinkedIn ↗</a>
+    <a href="https://github.com/Biswajit1999">GitHub ↗</a>
+    <a href="#top">Top ↑</a>
+  </div>
 </footer>
 </body>
 </html>
