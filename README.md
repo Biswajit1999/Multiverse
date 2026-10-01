@@ -8,7 +8,7 @@
 >
 > **More precisely:** inflation followed by reheating is the strongest testable bridge found in this project between a pre-hot-Big-Bang state and the hot, structured universe we observe. That is an author synthesis from the implemented theory + simulations + current data — not proof that inflation is the unique history of nature.
 
-![From inflation to the hot Big Bang](assets/generated/handdrawn_inflation_to_big_bang.jpg)
+![From inflation to the hot Big Bang](assets/generated/inflation_reheating_path.svg)
 
 ## The problem I am trying to solve
 
@@ -38,7 +38,7 @@ At $N=60$, the current implementation gives:
 
 The live site also plots the released NASA/LAMBDA TT-spectrum data used for Planck 2018 + ACT DR6 visualization.
 
-![Inflation models in the light of observations](assets/generated/observational_constraints.jpg)
+![Inflation models in the light of observations](assets/generated/constraints_vector.svg)
 
 ## Why the answer is not simply “multiverse”
 
@@ -52,7 +52,7 @@ $$
 
 which can produce causally separated reheating regions. That makes a multiverse a possible **consequence of some models**, not an observed premise and not the project's starting answer.
 
-![Conceptual bubble-universe flow](assets/generated/hero_bubble_universes.jpg)
+![Conceptual bubble-universe flow](assets/generated/hero_multiverse_vector.svg)
 
 ## Research archive and reproducibility
 
