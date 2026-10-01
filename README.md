@@ -180,21 +180,21 @@ The repository treats no-boundary and tunneling proposals as alternative boundar
 
 For an $O(4)$-symmetric Euclidean scalar–gravity system,
 
-$
+$$
 \phi''+3\frac{\rho'}{\rho}\phi'=V_{,\phi},
 \qquad
 \rho''=-\frac{\rho}{3M_{\rm Pl}^2}\left(\phi'^2+V\right),
-$
+$$
 
 with constraint
 
-$
+$$
 \rho'^2=1+\frac{\rho^2}{3M_{\rm Pl}^2}\left(\frac12\phi'^2-V\right).
-$
+$$
 
 The code now includes these Coleman–De Luccia trajectory equations, thin-wall and Hawking–Moss limits, a Fubini–Lipatov benchmark, and a stochastic self-reproduction diagnostic. It also includes a Wheeler–DeWitt minisuperspace solver with an analytic WKB check.
 
-![Conceptual bubble landscape](assets/concepts/bubble_universes.jpg)
+![Conceptual bubble landscape](assets/concepts/bubble_universes.svg)
 
 *Conceptual illustration only — not observational evidence of other universes.*
 
