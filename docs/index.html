@@ -3,157 +3,113 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Multiverse Cosmology Lab — a research notebook on what could have preceded the hot Big Bang, by Biswajit Jana.">
-<meta name="theme-color" content="#07111f">
-<title>Multiverse Cosmology Lab — Biswajit Jana</title>
+<meta name="description" content="Multiverse Cosmology Lab — Biswajit Jana's computational investigation of what could have preceded the hot Big Bang.">
+<meta name="theme-color" content="#050914">
+<title>What Came Before the Big Bang? — Multiverse Cosmology Lab</title>
 <link rel="stylesheet" href="styles.css">
 <script type="module" src="app.js"></script>
 </head>
 <body>
 <div class="progress" id="progress"></div>
-
 <header class="site-header">
-  <a class="brand" href="#top">Multiverse Cosmology Lab</a>
-  <nav>
-    <a href="#answer">Answer</a>
-    <a href="#evidence">Evidence</a>
-    <a href="#models">Models</a>
-    <a href="#lab">Lab</a>
-    <a href="#fieldnote">Field Note</a>
-  </nav>
-  <a class="github" href="https://github.com/Biswajit1999/Multiverse">GitHub ↗</a>
+  <a class="brand" href="#top">MCL / Biswajit Jana</a>
+  <nav><a href="#questions">Questions</a><a href="#path">Path</a><a href="#evidence">Data</a><a href="#alternatives">Alternatives</a><a href="#verdict">Verdict</a></nav>
+  <a class="github" href="https://github.com/Biswajit1999/Multiverse">Research archive ↗</a>
 </header>
 
 <main id="top">
-<section class="hero section">
+<section class="hero">
+  <canvas id="universe3d" aria-hidden="true"></canvas>
+  <div class="liquid-orb orb-a"></div><div class="liquid-orb orb-b"></div>
   <div class="hero-copy reveal">
-    <p class="kicker">COSMOLOGY / EARLY UNIVERSE / ORIGIN PROBLEM</p>
-    <h1>What happened before the hot Big Bang?</h1>
-    <p class="dek">A research notebook built around equations, simulations, public CMB data and explicit failure conditions — not a gallery of speculative ideas.</p>
-    <div class="answer-chip">
-      <span>ONE-WORD WORKING ANSWER</span>
-      <strong>Inflation.</strong>
-      <small>More precisely: inflation followed by reheating is the strongest working mechanism in this project for generating the hot Big Bang. It is not a proof of an absolute beginning or of a multiverse.</small>
-    </div>
-    <div class="hero-actions">
-      <a class="primary" href="#evidence">Follow the evidence</a>
-      <a class="secondary" href="https://github.com/Biswajit1999/Multiverse/blob/main/REPORT.md">Read the full report</a>
-    </div>
-    <p class="byline">Biswajit Jana · independent cosmology research notebook · 2026</p>
+    <p class="kicker">FIELD NOTE 001 · COSMIC ORIGINS · 2026</p>
+    <h1>What happened <em>before</em> the hot Big Bang?</h1>
+    <p class="dek">I treated the question as an inverse problem: start from the relics we can measure, evolve candidate histories, and ask which earlier state can actually produce our hot universe.</p>
+    <div class="verdict-mini"><span>WORKING ANSWER</span><b>INFLATION</b><small>followed by reheating · a testable conclusion, not a claim of final proof</small></div>
+    <div class="hero-actions"><a class="primary" href="#questions">Enter the notebook</a><a href="https://github.com/Biswajit1999/Multiverse/blob/main/REPORT.md">Full report ↗</a></div>
   </div>
-  <figure class="hero-visual reveal">
-    <img src="assets/bubble_universes.svg" alt="Conceptual schematic of bubble universes in an inflating background">
-    <figcaption>Conceptual schematic only. Other universes have not been directly observed.</figcaption>
-  </figure>
+  <div class="scroll-cue">scroll through the evidence <i>↓</i></div>
 </section>
 
-<section id="answer" class="section answer-section">
-  <div class="article-grid">
-    <article class="prose reveal">
-      <p class="eyebrow">THE SHORT ANSWER</p>
-      <h2>If I had to leave one word for humanity, it would be <em>inflation</em>.</h2>
-      <p>Not because every alternative has been disproved, and not because inflation explains why anything exists at all. The reason is narrower and testable: an inflationary phase can dynamically precede the thermal Big Bang, generate primordial fluctuations, and end through reheating into a hot radiation bath.</p>
-      <p>That chain connects a pre-hot-Big-Bang mechanism to measurements we can actually make: the scalar spectral index <i>n</i><sub>s</sub>, the tensor-to-scalar ratio <i>r</i>, the CMB power spectrum, curvature and non-Gaussianity.</p>
-      <blockquote>My working conclusion is not “the multiverse exists.” It is: <strong>inflation + reheating is the most productive, testable route currently available for explaining how the hot Big Bang could have emerged.</strong></blockquote>
-    </article>
-    <aside class="evidence-ladder reveal">
-      <h3>Evidence ladder</h3>
-      <div><b>Observed</b><span>expansion, CMB, primordial abundances, structure</span></div>
-      <div><b>Strongly constrained</b><span>primordial spectrum, curvature, tensor amplitude</span></div>
-      <div><b>Model-dependent</b><span>inflaton potential, reheating physics</span></div>
-      <div><b>Open</b><span>eternal inflation, bounce history, quantum boundary, multiverse</span></div>
-    </aside>
+<section id="questions" class="paper-section">
+  <div class="paper-inner">
+    <p class="ink-label">THE QUESTIONS I ACTUALLY TRIED TO ANSWER</p>
+    <h2>Not “which theory sounds beautiful?” — which history survives contact with physics?</h2>
+    <div class="question-ledger">
+      <article><span>01</span><h3>What is the Big Bang?</h3><p>A hot radiation-dominated phase, not automatically an experimentally proved absolute beginning.</p></article>
+      <article><span>02</span><h3>Can an earlier state create it?</h3><p>Inflation + reheating supplies explicit dynamics from vacuum domination into radiation.</p></article>
+      <article><span>03</span><h3>Can we test the earlier state?</h3><p>Primordial perturbations map the model into the CMB through <i>n</i><sub>s</sub>, <i>r</i> and the power spectrum.</p></article>
+      <article><span>04</span><h3>Does that prove a multiverse?</h3><p>No. Eternal inflation is a model-dependent extension; other universes remain unobserved.</p></article>
+    </div>
+    <a class="text-link" href="https://github.com/Biswajit1999/Multiverse/blob/main/RESEARCH_QUESTIONS.md">Open all nine research questions →</a>
   </div>
 </section>
 
-<section id="evidence" class="section data-section">
-  <div class="section-head reveal">
-    <p class="eyebrow">REAL DATA, NOT A DECORATIVE CURVE</p>
-    <h2>The microwave sky is where origin models meet measurement.</h2>
-    <p>The chart below loads the NASA LAMBDA February 2026 TT spectrum table at deployment time. Planck 2018 and ACT DR6 measurements are plotted from the released data used by LAMBDA for visualization.</p>
-  </div>
-  <div class="chart-card reveal">
-    <div class="chart-meta">
-      <span id="dataStatus">Loading NASA/LAMBDA data…</span>
-      <a href="https://lambda.gsfc.nasa.gov/education/lambda_graphics/more/tt_spectrum_source.html">NASA LAMBDA source ↗</a>
+<section id="path" class="story-section">
+  <div class="story-grid">
+    <div class="sticky-copy reveal">
+      <p class="eyebrow">THE PHYSICAL PATH</p>
+      <h2>From a nearly empty inflating state to a hot universe full of particles.</h2>
+      <p>The critical step is reheating. Inflation alone leaves a cold, vacuum-dominated universe. A viable origin story has to transfer energy into radiation and then connect those early fluctuations to the structure we observe billions of years later.</p>
+      <div class="equation-stack"><div>φ¨ + 3Hφ˙ + V<sub>,φ</sub> = 0</div><div>ρ̇<sub>φ</sub> + 3H(1+w<sub>φ</sub>)ρ<sub>φ</sub> = −Γρ<sub>φ</sub></div><div>ρ̇<sub>R</sub> + 4Hρ<sub>R</sub> = Γρ<sub>φ</sub></div></div>
     </div>
-    <canvas id="cmbChart" width="1200" height="560" aria-label="CMB TT power spectrum from public Planck and ACT data"></canvas>
-    <div class="chart-legend"><span class="planck-dot">Planck 2018</span><span class="act-dot">ACT DR6 2025</span></div>
-  </div>
-  <div class="figure-note reveal">
-    <b>How this enters the project.</b> The CMB acoustic structure constrains the initial perturbation spectrum. In this repository, concrete inflationary potentials are mapped to <i>n</i><sub>s</sub> and <i>r</i>, then compared with current benchmark constraints rather than judged by visual appeal.
+    <figure class="paper-figure reveal">
+      <img src="assets/generated/handdrawn_inflation_to_big_bang.jpg" alt="Hand-drawn scientific diagram from inflation through reheating to the hot Big Bang and later structure">
+      <figcaption>Research illustration: slow roll → reheating → radiation domination → CMB and structure. Equations and numerical modules in the repository implement the same chain.</figcaption>
+    </figure>
   </div>
 </section>
 
-<section id="models" class="section">
-  <div class="section-head reveal">
-    <p class="eyebrow">THE COMPETING HYPOTHESES</p>
-    <h2>Four doors into the hot Big Bang — only one is my working lead.</h2>
-  </div>
-  <div class="model-grid">
-    <article class="model-card lead reveal"><span class="tag">WORKING LEAD</span><h3>Inflation → reheating</h3><p>Accelerated scalar-field expansion followed by particle production.</p><div class="eq">φ¨ + 3Hφ˙ + V,φ = 0</div><div class="status">Directly connected to measurable primordial spectra.</div></article>
-    <article class="model-card reveal"><span class="tag">OPEN</span><h3>Nonsingular bounce</h3><p>A contracting phase reaches a finite minimum scale factor and re-expands.</p><div class="eq">H² ∝ ρ(1 − ρ/ρ<sub>c</sub>)</div><div class="status">Requires high-density physics beyond standard GR.</div></article>
-    <article class="model-card reveal"><span class="tag">OPEN</span><h3>Cyclic cosmology</h3><p>Repeated contraction and expansion with a transition mechanism between cycles.</p><div class="eq">a(t) : contraction → bounce → expansion</div><div class="status">Must control entropy, perturbations and the bounce.</div></article>
-    <article class="model-card reveal"><span class="tag">OPEN</span><h3>Quantum boundary</h3><p>Replace a classical beginning by a wave function or boundary prescription.</p><div class="eq">ĤΨ = 0</div><div class="status">Interpretation and measure remain unresolved.</div></article>
-  </div>
-  <figure class="comparison reveal">
-    <img src="assets/pre_big_bang_scenarios.jpg" alt="Comparison of inflationary extension, nonsingular bounce and cyclic cosmology">
-    <figcaption>Model comparison used throughout the report: inflationary extension, bounce and cyclic evolution are physically distinct hypotheses.</figcaption>
-  </figure>
+<section class="flow-section">
+  <canvas id="flowCanvas" aria-hidden="true"></canvas>
+  <div class="flow-copy reveal"><p class="eyebrow">THE WALLS OF THE ROOM</p><h2>The observable universe is not known to have a material wall.</h2><p>The “wall” is causal: light has had only finite time to reach us through an expanding spacetime. Regions beyond our particle horizon can exist without being separate universes. Bubble universes are a stronger, model-dependent statement.</p><div class="formula">χ<sub>p</sub>(t) = c ∫ dt′ / a(t′)</div></div>
+</section>
+
+<section id="evidence" class="data-section section">
+  <div class="section-head reveal"><p class="eyebrow">PUBLIC DATA</p><h2>The relic light of the hot Big Bang is the judge.</h2><p>The interactive chart loads the NASA LAMBDA February 2026 TT-spectrum table used to visualize released Planck 2018 and ACT DR6 measurements.</p></div>
+  <div class="chart-card reveal"><div class="chart-meta"><span id="dataStatus">Loading NASA/LAMBDA data…</span><a href="https://lambda.gsfc.nasa.gov/education/lambda_graphics/more/tt_spectrum_source.html">data source ↗</a></div><canvas id="cmbChart" width="1200" height="560"></canvas><div class="chart-legend"><span class="planck-dot">Planck 2018</span><span class="act-dot">ACT DR6</span></div></div>
+  <div class="data-caption reveal"><b>Why this graph matters:</b> the acoustic structure constrains the primordial fluctuation spectrum. An origin model that cannot reproduce the measured spectrum is not rescued by being mathematically interesting.</div>
+</section>
+
+<section class="visual-break">
+  <img src="assets/generated/cosmic_web_flow.jpg" alt="Conceptual luminous cosmic web with flowing spacetime structure">
+  <div class="visual-break-copy"><span>FROM FLUCTUATIONS TO STRUCTURE</span><b>Quantum-scale seeds → CMB anisotropy → galaxies and the cosmic web</b></div>
 </section>
 
 <section id="lab" class="section">
-  <div class="section-head reveal">
-    <p class="eyebrow">INTERACTIVE MODEL LAB</p>
-    <h2>Change the e-fold count. Watch the prediction move.</h2>
-  </div>
+  <div class="section-head reveal"><p class="eyebrow">MODEL ↔ DATA LAB</p><h2>One slider. Two inflationary potentials. Very different gravitational-wave predictions.</h2></div>
   <div class="lab-grid">
-    <div class="control-panel reveal">
-      <label for="efolds">Number of e-folds <b>N = <span id="nValue">60</span></b></label>
-      <input id="efolds" type="range" min="45" max="70" value="60" step="1">
-      <div class="metric-group">
-        <div><span>Quadratic φ²</span><strong id="qNs"></strong><strong id="qR"></strong></div>
-        <div><span>Plateau / Starobinsky leading order</span><strong id="sNs"></strong><strong id="sR"></strong></div>
-      </div>
-      <p class="muted">2026 compressed CMB benchmark used here: nₛ = 0.9682 ± 0.0032 and r &lt; 0.034. A CMB+DESI combination shifts the reported nₛ mean upward, illustrating dataset dependence.</p>
-    </div>
-    <div class="nr-card reveal">
-      <canvas id="nrChart" width="760" height="520" aria-label="Inflation model predictions in ns-r space"></canvas>
+    <div class="control-panel reveal"><label for="efolds">e-folds <b>N = <span id="nValue">60</span></b></label><input id="efolds" type="range" min="45" max="70" value="60" step="1"><div class="metric-group"><div><span>Quadratic V ∝ φ²</span><strong id="qNs"></strong><strong id="qR"></strong></div><div><span>Plateau / Starobinsky</span><strong id="sNs"></strong><strong id="sR"></strong></div></div><p class="muted">Compressed benchmark: nₛ ≈ 0.9682 ± 0.0032 and r &lt; 0.034 for the cited current CMB synthesis.</p></div>
+    <div class="nr-card reveal"><canvas id="nrChart" width="760" height="520"></canvas></div>
+  </div>
+  <figure class="paper-wide reveal"><img src="assets/generated/observational_constraints.jpg" alt="Hand-drawn explanatory plot comparing inflationary models with observational constraints"><figcaption>Illustrative reading guide for the same model-selection problem. The live canvas above is calculated in the browser; numerical research values are generated by the Python package.</figcaption></figure>
+</section>
+
+<section id="alternatives" class="paper-section">
+  <div class="paper-inner">
+    <p class="ink-label">THE ALTERNATIVES ARE NOT DELETED — THEY ARE PUT ON TRIAL</p>
+    <h2>Inflation, bounce, cyclic evolution, and a quantum boundary answer different versions of “before”.</h2>
+    <figure class="paper-figure wide"><img src="assets/generated/handdrawn_origins_comparison.jpg" alt="Hand-drawn comparison of inflationary extension, nonsingular bounce, cyclic cosmology and quantum boundary scenarios"><figcaption>Four model classes considered by the project. A mathematically consistent background is only the first hurdle; perturbations and observational discriminants decide whether a model remains competitive.</figcaption></figure>
+    <div class="model-strip">
+      <div><b>Inflation + reheating</b><span>complete bridge to hot phase + observable perturbations</span></div>
+      <div><b>Bounce</b><span>explicit nonsingular background; high-density completion and perturbations remain model dependent</span></div>
+      <div><b>Cyclic</b><span>requires a repeatable transition, entropy control and viable perturbations</span></div>
+      <div><b>Quantum boundary</b><span>changes the initial-condition problem; interpretation and measure remain open</span></div>
     </div>
   </div>
 </section>
 
-<section id="fieldnote" class="section field-note">
-  <article class="prose long reveal">
-    <p class="eyebrow">FIELD NOTE 001 — WRITTEN FROM 2026, WITH A THOUSAND-YEAR HORIZON</p>
-    <h2>Imagine we are the archaeologists of spacetime.</h2>
-    <p>We do not stand outside the universe and photograph its birth. We inherit relics: a microwave background, a distribution of galaxies, light-element abundances, gravitational-wave limits and the equations that connect those fossils to possible earlier dynamics.</p>
-    <p>The scientifically useful move is to stop asking only, “Which theory sounds most profound?” and instead ask, “Which prior state evolves into our hot universe and leaves the fingerprints we actually observe?”</p>
-    <p>For this project, that filter changes the story. Eternal inflation, quantum tunnelling, cyclic histories and nonsingular bounces remain intellectually serious, but they sit at different distances from measurement. Inflation is not chosen because it is dramatic. It is chosen as the working answer because it currently gives the cleanest bridge from pre-hot-Big-Bang dynamics to a calculable primordial spectrum and reheating history.</p>
-    <p>The most important unresolved step is therefore not another conceptual image. It is the next discriminant: a prediction that a competing origin model cannot mimic.</p>
-  </article>
-  <aside class="author-verdict reveal">
-    <span>AUTHOR'S WORKING VERDICT</span>
-    <strong>INFLATION</strong>
-    <p>followed by reheating</p>
-    <small>Leading mechanism in this project, not final proof.</small>
-  </aside>
+<section class="multiverse-section">
+  <div class="multiverse-visual reveal"><img src="assets/generated/hero_bubble_universes.jpg" alt="Conceptual bubble universes emerging in an inflating background"></div>
+  <div class="multiverse-copy reveal"><p class="eyebrow">AND THE MULTIVERSE?</p><h2>A consequence in some models, not the answer I smuggled in at the start.</h2><p>When quantum fluctuations overpower classical inflaton drift in some regions, inflation can become self-reproducing. Reheating then ends inflation locally while other regions continue expanding.</p><div class="formula">𝓡<sub>EI</sub> ≃ 3H³ / (2π|V<sub>,φ</sub>|)</div><p>If 𝓡<sub>EI</sub> &gt; 1 locally, the stochastic regime becomes possible. That is a theoretical criterion. It is not a telescope image of another universe.</p></div>
 </section>
 
-<section class="section sources">
-  <p class="eyebrow">PAPERS + DATA USED IN THE STORY</p>
-  <div class="source-grid">
-    <a href="https://lambda.gsfc.nasa.gov/education/lambda_graphics/more/tt_spectrum_source.html"><b>NASA LAMBDA</b><span>Planck + ACT TT spectrum plotting data</span></a>
-    <a href="https://doi.org/10.33232/001c.164435"><b>Inflation at the End of 2025</b><span>Current CMB/BAO constraints on nₛ and r</span></a>
-    <a href="https://arxiv.org/abs/1807.06211"><b>Planck 2018 X</b><span>Inflation constraints and primordial spectra</span></a>
-    <a href="https://github.com/ACTCollaboration/DR6_Notebooks"><b>ACT DR6 notebooks</b><span>Public analysis notebooks for the 2025 release</span></a>
-  </div>
+<section id="verdict" class="verdict-section">
+  <div class="verdict-backdrop"></div>
+  <div class="verdict-content reveal"><p>AUTHOR'S SYNTHESIS · 2026</p><span>If forced to compress the entire investigation to one word:</span><h2>INFLATION</h2><h3>followed by reheating.</h3><blockquote>It is the strongest working bridge I find between a pre-hot-Big-Bang state and the hot, structured universe we can measure. The deeper question — what selected the inflating state, and whether its global completion contains other universes — remains open.</blockquote><div class="verdict-links"><a href="https://github.com/Biswajit1999/Multiverse/blob/main/REPORT.md">Integrated report</a><a href="https://github.com/Biswajit1999/Multiverse/blob/main/RESEARCH_QUESTIONS.md">Question ledger</a><a href="https://github.com/Biswajit1999/Multiverse">Code + notebooks</a></div></div>
 </section>
+
+<section class="sources section"><p class="eyebrow">PRIMARY LITERATURE + DATA</p><div class="source-grid"><a href="https://lambda.gsfc.nasa.gov/education/lambda_graphics/more/tt_spectrum_source.html"><b>NASA LAMBDA</b><span>Planck + ACT TT-spectrum data</span></a><a href="https://arxiv.org/abs/1807.06211"><b>Planck 2018 X</b><span>constraints on inflation</span></a><a href="https://doi.org/10.33232/001c.164435"><b>Inflation at the End of 2025</b><span>current nₛ and r synthesis</span></a><a href="https://github.com/ACTCollaboration/DR6_Notebooks"><b>ACT DR6</b><span>public analysis notebooks</span></a></div></section>
 </main>
-
-<footer>
-  <div><b>Multiverse Cosmology Lab</b><span>Biswajit Jana · 2026</span></div>
-  <div><a href="https://github.com/Biswajit1999/Multiverse">Code</a><a href="https://github.com/Biswajit1999/Multiverse/blob/main/REPORT.md">Report</a><a href="#top">Back to top ↑</a></div>
-</footer>
-</body>
-</html>
+<footer><div><b>Multiverse Cosmology Lab</b><span>Biswajit Jana · 2026</span></div><div><a href="#top">Top ↑</a><a href="https://github.com/Biswajit1999/Multiverse">GitHub</a></div></footer>
+</body></html>
