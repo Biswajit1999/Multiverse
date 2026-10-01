@@ -8,7 +8,7 @@
 >
 > **More precisely:** inflation followed by reheating is the strongest testable bridge found in this project between a pre-hot-Big-Bang state and the hot, structured universe we observe. That is an author synthesis from the implemented theory + simulations + current data — not proof that inflation is the unique history of nature.
 
-![From inflation to the hot Big Bang](assets/generated/inflation_reheating_path.svg)
+![From inflation to the hot Big Bang](docs/assets/images/12_cosmic_timeline_to_the_multiverse.png)
 
 ## The problem I am trying to solve
 
@@ -25,6 +25,17 @@ Instead of ending with a catalogue of theories, this repository asks a sequence 
 
 Read the full [question-ledger](RESEARCH_QUESTIONS.md) or the [integrated report](REPORT.md).
 
+## Visual research story
+
+The live site now uses the full-resolution 20-image research visual set as an editorial narrative rather than decorative filler. Each generated image is treated as a **conceptual or explanatory figure**, while real measurements and numerical outputs remain separate and explicitly identified.
+
+![Multiverse Cosmology Lab hero](docs/assets/images/01_hero_main.png)
+
+The visual sequence moves from the early-universe problem through inflation/reheating and observable relics, then into model comparison, vacuum decay, horizons, eternal inflation, speculative higher-dimensional viewpoints, and the current research verdict.
+
+![Current research verdict](docs/assets/images/20_current_research_verdict.png)
+
+
 ## Evidence chain
 
 `pre-hot state → inflation → quantum fluctuations → reheating → hot Big Bang → CMB → galaxies`
@@ -38,7 +49,7 @@ At $N=60$, the current implementation gives:
 
 The live site also plots the released NASA/LAMBDA TT-spectrum data used for Planck 2018 + ACT DR6 visualization.
 
-![Inflation models in the light of observations](assets/generated/constraints_vector.svg)
+![Inflation models in the light of observations](docs/assets/images/05_ns_r_constraints.png)
 
 ## Why the answer is not simply “multiverse”
 
@@ -52,7 +63,7 @@ $$
 
 which can produce causally separated reheating regions. That makes a multiverse a possible **consequence of some models**, not an observed premise and not the project's starting answer.
 
-![Conceptual bubble-universe flow](assets/generated/hero_multiverse_vector.svg)
+![Conceptual bubble-universe flow](docs/assets/images/17_if_universes_are_many.png)
 
 ## Research archive and reproducibility
 
@@ -86,7 +97,7 @@ Read the full argument in [REPORT.md](REPORT.md) and [theory/06_why_hot_big_bang
 
 ## Scientific model map
 
-![Cosmic origin model map](assets/figures/cosmic_origin_model_map.svg)
+![Cosmic origin model map](docs/assets/images/18_four_cosmic_paths.png)
 
 The diagram separates several model classes capable of extending the standard hot-Big-Bang history: inflation/reheating, false-vacuum bubble nucleation, bounce/cyclic cosmology and quantum-boundary proposals. They do not have the same assumptions or empirical status.
 
@@ -112,7 +123,7 @@ $$
 
 These quantities make the phrase "outside our universe" more precise: the observable boundary is a causal horizon, not a material wall.
 
-![Horizon engine](assets/figures/phase4_horizon_engine.svg)
+![Horizon engine](docs/assets/images/15_horizons_within_horizons.png)
 
 Implementation: [src/multiverse_cosmology/horizons.py](src/multiverse_cosmology/horizons.py)  
 Notebook: [code/notebooks/03_horizon_structure.ipynb](code/notebooks/03_horizon_structure.ipynb)
@@ -240,11 +251,11 @@ $$
 
 The code now includes these Coleman–De Luccia trajectory equations, thin-wall and Hawking–Moss limits, a Fubini–Lipatov benchmark, and a stochastic self-reproduction diagnostic. It also includes a Wheeler–DeWitt minisuperspace solver with an analytic WKB check.
 
-![Conceptual bubble landscape](assets/concepts/bubble_universes.svg)
+![Conceptual bubble landscape](docs/assets/images/13_landscape_of_vacua.png)
 
 *Conceptual illustration only — not observational evidence of other universes.*
 
-![Model-dependent pre-Big-Bang scenarios](assets/concepts/pre_big_bang_scenarios.jpg)
+![Model-dependent pre-Big-Bang scenarios](docs/assets/images/09_origins_triptych.png)
 
 *Inflationary extension, nonsingular bounce, and cyclic evolution are distinct theoretical model classes.*
 
