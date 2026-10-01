@@ -2,101 +2,169 @@
 
 **Author: Biswajit Jana**
 
-An open research-and-education project exploring what modern cosmology can — and cannot — say about cosmic origins, inflation, multiverse scenarios, and the question: **what, if anything, preceded the hot Big Bang?**
+A research-driven computational project asking a precise question:
 
-> **Scientific status:** The hot Big Bang, cosmic expansion, the CMB, primordial nucleosynthesis, and large-scale structure are strongly supported by observation. Inflation is a major early-universe framework with successful predictions but unknown underlying microphysics. Eternal inflation and multiverse scenarios arise in some models but are not empirically established.
+> **What physical mechanisms could generate the hot Big Bang state, what do their equations predict, and can observations distinguish them?**
 
-## Core questions
+This repository does **not** assume that a multiverse exists. It treats eternal inflation, false-vacuum bubbles, quantum-cosmology boundary conditions, bounces and cyclic histories as competing model classes whose assumptions and consequences can be calculated.
 
-- What does the Big Bang model actually describe?
-- Does spacetime necessarily begin at the hot Big Bang?
-- How do FLRW cosmologies evolve?
-- How can scalar-field inflation produce accelerated expansion?
-- Under what assumptions can inflation become eternal?
-- What do "bubble universes" mean mathematically?
-- What observations could distinguish competing early-universe models?
-- Where does physics end and speculation begin?
+## Current research status
 
-## Repository map
+**Phase 3 / 10.** The repository now has the baseline FLRW/inflation solvers, a research report, explicit origin mechanisms, reheating and bounce toy models, tests, a testability framework and scientific figures. The difficult research phases — perturbation calculations, Euclidean vacuum-decay solutions, quantum-cosmology numerics and data-facing model comparison — are still ahead.
 
-~~~text
-Multiverse/
-├── README.md
-├── LICENSE
-├── CITATION.cff
-├── pyproject.toml
-├── requirements.txt
-├── theory/
-│   ├── 01_big_bang_and_horizons.md
-│   ├── 02_flrw_and_friedmann.md
-│   ├── 03_inflation_and_eternal_inflation.md
-│   ├── 04_multiverse_frameworks.md
-│   └── 05_scientific_status.md
-├── code/
-│   └── notebooks/
-│       ├── 01_friedmann_scale_factor.ipynb
-│       └── 02_scalar_field_inflation.ipynb
-├── src/
-│   └── multiverse_cosmology/
-│       ├── __init__.py
-│       ├── friedmann.py
-│       └── inflation.py
-├── images/
-│   └── PROMPTS.md
-├── tests/
-│   ├── test_friedmann.py
-│   └── test_inflation.py
-└── references/
-    └── references.bib
-~~~
+See [ROADMAP.md](ROADMAP.md) for the phase definition.
 
-## First simulations
+## Central result so far
 
-### 1. FLRW / Friedmann evolution
+The hot Big Bang is a description of an early hot, dense, expanding state. It is not, by itself, an equation for why existence began.
+
+A concrete mechanism can generate the hot state. For example, inflation followed by reheating obeys
 
 $$
-H^2(a)=H_0^2\left(\Omega_r a^{-4}+\Omega_m a^{-3}+\Omega_k a^{-2}+\Omega_\Lambda\right)
+\dot\rho_\phi+3H(1+w_\phi)\rho_\phi=-\Gamma_\phi\rho_\phi,
 $$
 
-with
-
 $$
-\dot a = aH(a)
+\dot\rho_R+4H\rho_R=\Gamma_\phi\rho_\phi,
 $$
 
-The notebook numerically integrates the background scale-factor evolution and visualizes $a(t)$.
+$$
+H^2=\frac{\rho_\phi+\rho_R}{3M_{\rm Pl}^2}.
+$$
 
-### 2. Scalar-field inflation
+When radiation dominates, the usual hot Big Bang thermal history begins. This explains a **transition into** the hot phase; it does not yet explain why the prior state existed.
 
-For a homogeneous canonical inflaton $\phi$,
+Read the full derivation and model comparison in [REPORT.md](REPORT.md).
+
+## Scientific model map
+
+![Cosmic origin model map](assets/figures/cosmic_origin_map.svg)
+
+The diagram separates four broad routes to a hot expanding phase: inflation/reheating, false-vacuum bubble nucleation, bounce/cyclic cosmology, and quantum boundary proposals. They are not equally established and they do not answer exactly the same question.
+
+## Core equations
+
+### FLRW background
+
+$$
+ds^2=-c^2dt^2+a^2(t)\left[\frac{dr^2}{1-kr^2}+r^2d\Omega^2\right]
+$$
+
+$$
+H^2=
+\frac{8\pi G}{3}\rho-\frac{kc^2}{a^2}+\frac{\Lambda c^2}{3}
+$$
+
+$$
+\dot\rho+3H\left(\rho+\frac{p}{c^2}\right)=0
+$$
+
+### Scalar-field inflation
 
 $$
 \ddot\phi+3H\dot\phi+V_{,\phi}=0
 $$
 
 $$
-H^2=\frac{1}{3M_{\rm Pl}^2}\left(\frac{1}{2}\dot\phi^2+V(\phi)\right)
+\epsilon_V=
+\frac{M_{\rm Pl}^2}{2}
+\left(\frac{V_{,\phi}}{V}\right)^2
 $$
 
-The starter implementation uses a quadratic toy potential for pedagogy. It is **not** presented as the preferred observational model.
+![Slow-roll diagnostic](assets/figures/inflation_slow_roll.svg)
 
-## What this project currently finds
+### False-vacuum decay
 
-Some inflationary potentials can enter an **eternal-inflation** regime in which quantum fluctuations prevent inflation from ending everywhere at once. Reheating can then occur in separated regions, often described as pocket or bubble universes. That is a theoretical consequence of particular models — not direct observational evidence of other universes.
+$$
+\frac{\Gamma}{V}\sim A\exp\left(-\frac{B}{\hbar}\right)
+$$
 
-The question **"what came before the Big Bang?"** remains open and model-dependent. The hot Big Bang describes an early hot, dense phase and the subsequent expansion; it does not by itself establish an absolute beginning of all spacetime. Proposed extensions include inflationary, bouncing, cyclic, quantum-cosmological, and no-boundary scenarios, none of which is currently established as the unique pre-Big-Bang history.
+with the gravitational instanton problem developed by Coleman and De Luccia.
 
-## Scientific-status labels
+### Effective bounce example
 
-Theory pages distinguish:
+$$
+H^2=
+\frac{8\pi G}{3}\rho
+\left(1-\frac{\rho}{\rho_c}\right)
+$$
 
-- **Established observation**
-- **Standard-model inference**
-- **Supported but model-dependent**
-- **Speculative / active research**
-- **Illustrative visualization only**
+![Bounce comparison](assets/figures/bounce_vs_singularity.svg)
 
-## Reproducibility
+### Primordial perturbations
+
+$$
+\mathcal P_{\mathcal R}
+\approx
+\frac{H_*^2}{8\pi^2M_{\rm Pl}^2\epsilon_*},
+\qquad
+r\approx16\epsilon_*.
+$$
+
+The project uses observational constraints as a filter on models rather than treating mathematical possibility as evidence.
+
+## What "before the Big Bang" can mean
+
+The phrase can refer to several different questions:
+
+- an earlier classical FLRW phase;
+- inflation before reheating;
+- a contracting phase before a bounce;
+- an inflating false vacuum outside our bubble;
+- a quantum boundary rather than a classical earlier time;
+- or no meaningful classical "before" at all in a particular boundary proposal.
+
+See [theory/06_why_hot_big_bang.md](theory/06_why_hot_big_bang.md) and [theory/07_singularity_and_past_boundary.md](theory/07_singularity_and_past_boundary.md).
+
+## What singularity theorems do and do not prove
+
+Hawking-Penrose and Borde-Guth-Vilenkin place important restrictions on classical and inflating spacetimes. They establish forms of geodesic incompleteness under stated assumptions. They do **not** uniquely prove "creation from nothing."
+
+That distinction is central to this repository.
+
+## Testability
+
+A theory module is not complete until it states:
+
+1. assumptions;
+2. governing equations;
+3. numerical variables;
+4. predicted observables;
+5. failure conditions;
+6. current empirical status.
+
+See [theory/08_testability_and_observables.md](theory/08_testability_and_observables.md).
+
+## Repository structure
+
+~~~text
+Multiverse/
+├── README.md
+├── REPORT.md
+├── ROADMAP.md
+├── theory/
+│   ├── 01_big_bang_and_horizons.md
+│   ├── 02_flrw_and_friedmann.md
+│   ├── 03_inflation_and_eternal_inflation.md
+│   ├── 04_multiverse_frameworks.md
+│   ├── 05_scientific_status.md
+│   ├── 06_why_hot_big_bang.md
+│   ├── 07_singularity_and_past_boundary.md
+│   └── 08_testability_and_observables.md
+├── src/multiverse_cosmology/
+│   ├── friedmann.py
+│   ├── inflation.py
+│   ├── reheating.py
+│   └── bounce.py
+├── code/
+│   ├── notebooks/
+│   └── visualizations/
+├── assets/figures/
+├── tests/
+└── references/references.bib
+~~~
+
+## Reproduce the calculations
 
 ~~~bash
 python -m venv .venv
@@ -106,16 +174,16 @@ pytest
 jupyter lab
 ~~~
 
-The numerical package uses a conventional src/ layout so that it does not shadow Python standard-library modules. The starter validation suite currently contains six basic tests covering expansion behavior, potential positivity, solver success, and invalid inputs.
+The existing numerical models are deliberately labelled as baseline or toy calculations where appropriate. A simple model is useful only when its assumptions are explicit.
 
-## Visual language
+## Primary literature
 
-AI-generated art in this project is used only as **conceptual illustration**. Any multiverse image should carry the caption:
+The bibliography includes Guth on inflation, Coleman-De Luccia on vacuum decay, Linde on self-reproducing inflation, Hartle-Hawking and Vilenkin on quantum cosmology, Hawking-Penrose and Borde-Guth-Vilenkin on incompleteness, Steinhardt-Turok on cyclic cosmology, Ashtekar-Singh on loop quantum cosmology, and Planck/BICEP-Keck observational constraints.
 
-> Conceptual illustration — not observational evidence.
+See [references/references.bib](references/references.bib).
 
-See [images/PROMPTS.md](images/PROMPTS.md) for the initial visual briefs.
+## Authorship
 
-## Authorship and research practice
+**Biswajit Jana, 2026.**
 
-This project is authored and curated by **Biswajit Jana**. Computational and AI tools may assist literature discovery, coding, editing, and conceptual visualization, but the repository does not treat tool output as scientific authority. References, equations, simulations, and conclusions should be checked against primary literature before publication.
+The purpose of this repository is to make the reasoning reproducible: equations, assumptions, numerical experiments, citations, tests and failure modes are kept together rather than presenting speculative cosmology as settled fact.
