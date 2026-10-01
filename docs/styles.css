@@ -362,3 +362,172 @@ p{margin-top:0}
   .hero-stage:before,.dark-interlude:before{animation:none}
   .parallax-card img{transform:none!important}
 }
+
+
+/* ===== visual audit + authorship + full-image protection ===== */
+.authorbar{
+  position:relative;z-index:3100;
+  border-bottom:1px solid rgba(189,183,173,.55);
+  background:#111827;color:#eef2f8
+}
+.authorbar-inner{
+  min-height:32px;display:flex;align-items:center;justify-content:space-between;gap:18px;
+  font-size:10px;letter-spacing:.02em
+}
+.authorbar-inner>span{color:#cdd5e2}
+.authorbar-inner b{color:#fff}
+.authorbar-inner>div{display:flex;gap:16px;flex-wrap:wrap}
+.authorbar a{color:#dbe4ff;text-decoration:none}
+.authorbar a:hover{color:#fff}
+
+.research-image{
+  width:100%!important;
+  height:auto!important;
+  max-height:none!important;
+  aspect-ratio:auto!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  transform:none!important;
+  translate:none!important;
+  scale:1!important;
+  user-select:none;
+  -webkit-user-select:none;
+  -webkit-user-drag:none;
+  pointer-events:none
+}
+.hero-visual .research-image,
+.cinema-figure .research-image,
+.outside-visual .research-image,
+.report-cover .research-image,
+.verdict-visual .research-image{
+  width:100%!important;height:auto!important;aspect-ratio:auto!important;object-fit:contain!important
+}
+.parallax-card:hover .research-image{transform:none!important}
+.editorial-figure,.cinema-figure,.hero-visual,.outside-visual,.report-cover,.verdict-visual{
+  cursor:zoom-in;
+  transform-style:preserve-3d;
+  will-change:transform;
+}
+.figure-rights{
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+  padding:7px 11px;border-top:1px solid rgba(17,24,39,.10);
+  background:linear-gradient(90deg,rgba(17,24,39,.92),rgba(24,42,66,.92));
+  color:#dbe4ef;font-size:8px;line-height:1.25;letter-spacing:.055em
+}
+.figure-rights span:last-child{margin-left:auto;text-align:right;color:#fff;font-weight:760}
+.editorial-figure.dark .figure-rights{border-color:rgba(255,255,255,.08)}
+.image-tall{max-width:760px;margin-inline:auto}
+.image-tall .research-image{max-width:760px!important;margin-inline:auto}
+.image-wide .research-image{width:100%!important}
+.image-landscape .research-image{width:100%!important}
+
+/* Make the CMB explainer readable before the live plots. */
+.observatory-layout{grid-template-columns:1fr!important}
+.observatory-aside{
+  position:relative!important;top:auto!important;
+  display:grid!important;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr)!important;
+  gap:18px;align-items:center
+}
+.observatory-aside .editorial-figure{max-width:none}
+.observatory-aside .editorial-figure .research-image{width:100%!important}
+.paper-panel{width:100%}
+
+/* Scroll depth now moves the whole card, never the image itself. */
+.motion-card{
+  transition:box-shadow .35s ease;
+  backface-visibility:hidden;
+  transform-style:preserve-3d
+}
+.motion-card:hover{box-shadow:0 30px 75px rgba(18,30,52,.15)}
+
+/* Secondary 3D stages */
+.multiverse-section{position:relative;overflow:hidden;isolation:isolate}
+.multiverse-section>.shell{position:relative;z-index:3}
+#multiverseScene{
+  position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;
+  opacity:.68;mix-blend-mode:multiply
+}
+.report-section{
+  position:relative;overflow:hidden;isolation:isolate;
+  padding-block:76px;background:linear-gradient(145deg,#eef3ff 0%,#f5f2ea 48%,#eef9f7 100%);
+  border-block:1px solid var(--line)
+}
+.report-section>.shell{position:relative;z-index:3}
+#reportOrbit{
+  position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;
+  opacity:.52
+}
+.report-grid{display:grid;grid-template-columns:1fr .72fr;gap:42px;align-items:center}
+.report-copy>p{font-size:17px;color:var(--ink-2)}
+.report-chapters{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:20px 0}
+.report-chapters span{padding:11px 12px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.65);font-size:11px;color:var(--muted)}
+.report-chapters b{display:block;color:var(--ink);font-size:15px}
+.report-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+.report-note{margin-top:13px!important;font-size:11px!important;color:var(--muted)!important}
+.report-cover{
+  overflow:hidden;border-radius:22px;border:1px solid rgba(53,88,216,.18);
+  background:#fff;box-shadow:0 30px 80px rgba(32,53,95,.14)
+}
+.report-cover figcaption{padding:10px 12px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
+
+/* Full-screen figure inspector */
+.figure-lightbox{
+  position:fixed;inset:0;z-index:5000;display:none;align-items:center;justify-content:center;
+  padding:28px;background:rgba(7,12,20,.88);backdrop-filter:blur(18px)
+}
+.figure-lightbox.open{display:flex}
+.figure-lightbox-card{
+  width:min(1500px,96vw);max-height:94vh;display:grid;grid-template-rows:minmax(0,1fr) auto;
+  overflow:hidden;border:1px solid rgba(255,255,255,.16);border-radius:20px;background:#0d1522;
+  box-shadow:0 35px 120px rgba(0,0,0,.48)
+}
+.figure-lightbox-image{
+  min-height:0;display:flex;align-items:center;justify-content:center;padding:18px;
+  background:radial-gradient(circle at 50% 40%,#1b2b43,#0a111c 72%)
+}
+.figure-lightbox-image img{
+  max-width:100%;max-height:76vh;width:auto;height:auto;object-fit:contain;
+  user-select:none;-webkit-user-select:none;-webkit-user-drag:none
+}
+.figure-lightbox-meta{
+  display:grid;grid-template-columns:1fr auto;gap:18px;align-items:center;
+  padding:13px 16px;background:#111b2a;color:#eef2f8;border-top:1px solid rgba(255,255,255,.12)
+}
+.figure-lightbox-meta small,.figure-lightbox-meta b,.figure-lightbox-meta span{display:block}
+.figure-lightbox-meta small{font-size:8px;letter-spacing:.13em;color:#9fb1ff}
+.figure-lightbox-meta b{margin-top:2px;font-size:13px}
+.figure-lightbox-meta span{margin-top:3px;font-size:10px;color:#aeb8c7}
+.figure-lightbox-actions{display:flex;gap:8px}
+.figure-lightbox button{
+  border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(255,255,255,.08);
+  color:#fff;padding:7px 10px;font-size:10px;cursor:pointer
+}
+.figure-lightbox button:hover{background:rgba(255,255,255,.15)}
+.figure-lightbox-close{position:absolute;top:18px;right:20px}
+
+/* More visible liquid continuity between sections */
+.story-section,.models-section,.horizon-section,.outside-section{
+  position:relative
+}
+.story-section:after,.models-section:after,.horizon-section:after{
+  content:"";position:absolute;left:-8vw;right:-8vw;bottom:-38px;height:90px;pointer-events:none;z-index:-1;
+  background:linear-gradient(90deg,transparent,rgba(53,88,216,.08),rgba(29,142,167,.10),rgba(201,136,43,.06),transparent);
+  filter:blur(24px);transform:skewY(-2deg);animation:liquidSweep 10s ease-in-out infinite alternate
+}
+@keyframes liquidSweep{
+  from{translate:-3% 0;scale:1 .82}
+  to{translate:3% -6px;scale:1.05 1}
+}
+
+@media(max-width:1080px){
+  .report-grid{grid-template-columns:1fr}
+  .report-cover{max-width:760px}
+}
+@media(max-width:720px){
+  .authorbar-inner{align-items:flex-start;flex-direction:column;padding-block:7px}
+  .authorbar-inner>div{gap:10px}
+  .observatory-aside{grid-template-columns:1fr!important}
+  .report-chapters{grid-template-columns:1fr}
+  .figure-lightbox{padding:10px}
+  .figure-lightbox-meta{grid-template-columns:1fr}
+}
