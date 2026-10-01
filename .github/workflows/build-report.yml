@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "docs/report/Multiverse_Cosmology_Lab_Report.tex"
+      - "docs/report/.source-part-*.b64"
       - "docs/assets/images/**"
       - ".github/workflows/build-report.yml"
   workflow_dispatch:
@@ -17,6 +18,17 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+
+      - name: Reconstruct staged LaTeX source when present
+        shell: bash
+        run: |
+          shopt -s nullglob
+          parts=(docs/report/.source-part-*.b64)
+          if [ ${#parts[@]} -gt 0 ]; then
+            cat "${parts[@]}" | tr -d '\n\r' | base64 -d > docs/report/Multiverse_Cosmology_Lab_Report.tex
+          fi
+          test -s docs/report/Multiverse_Cosmology_Lab_Report.tex
+          grep -q '\\end{document}' docs/report/Multiverse_Cosmology_Lab_Report.tex
 
       - name: Compile LaTeX report
         uses: xu-cheng/latex-action@v3
@@ -34,14 +46,16 @@ jobs:
             docs/report/Multiverse_Cosmology_Lab_Report_full.pdf
           rm docs/report/Multiverse_Cosmology_Lab_Report_full.pdf
 
-      - name: Commit generated PDF
+      - name: Commit source and generated PDF
+        shell: bash
         run: |
+          rm -f docs/report/.source-part-*.b64
           git config user.name "Biswajit Jana"
           git config user.email "49089568+Biswajit1999@users.noreply.github.com"
-          git add docs/report/Multiverse_Cosmology_Lab_Report.pdf
+          git add -A docs/report
           if git diff --cached --quiet; then
-            echo "PDF unchanged"
+            echo "Report files unchanged"
             exit 0
           fi
-          git commit -m "Build LaTeX research report PDF [skip ci]"
+          git commit -m "Build LaTeX cosmology monograph and PDF [skip ci]"
           git push
