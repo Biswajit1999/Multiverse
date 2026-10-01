@@ -1,8 +1,13 @@
 cff-version: 1.2.0
-title: "Multiverse Cosmology Lab"
-message: "If you use this repository, please cite it."
+title: Multiverse Cosmology Lab
 type: software
+message: "If you use this repository, please cite it using this metadata."
 authors:
   - family-names: Jana
     given-names: Biswajit
-year: 2026
+version: 1.0.0
+date-released: 2026-10-01
+url: https://github.com/Biswajit1999/Multiverse
+repository-code: https://github.com/Biswajit1999/Multiverse
+license: MIT
+abstract: "A reproducible computational research framework for cosmic origins, inflation, vacuum decay, cosmological bounces, quantum cosmology and observational model discrimination."
