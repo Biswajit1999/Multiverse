@@ -3,13 +3,16 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
   id-token: write
+
 concurrency:
   group: pages
   cancel-in-progress: true
+
 jobs:
   deploy:
     environment:
@@ -18,10 +21,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - name: Prepare public research data
+        run: |
+          mkdir -p docs/data
+          cp data/constraints_2026.json docs/data/constraints_2026.json
+          curl --fail --location --retry 3             https://lambda.gsfc.nasa.gov/graphics/tt_spectrum/TT_data_2026feb_csv_format.dat             -o docs/data/TT_data_2026feb_csv_format.dat
+          touch docs/.nojekyll
+
       - uses: actions/configure-pages@v5
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: docs
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
