@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="850" viewBox="0 0 1400 850" role="img" aria-labelledby="t d">
+<title id="t">Inflation in the light of observations</title><desc id="d">Explanatory n-s versus r diagram comparing a quadratic inflation model and a low-r plateau model against current compressed constraints.</desc>
+<rect width="1400" height="850" fill="#f5f1e8"/>
+<text x="700" y="72" text-anchor="middle" font-family="Georgia,serif" font-size="47">Inflation in the light of observations</text>
+<text x="700" y="110" text-anchor="middle" font-family="Arial,sans-serif" font-size="20" fill="#53657c">current data strongly constrain high-r models</text>
+<g transform="translate(135 165)">
+ <rect width="880" height="530" fill="#fffdf7" stroke="#222" stroke-width="2"/>
+ <rect x="400" y="270" width="315" height="195" rx="120" fill="#bdd4eb" opacity=".48"/>
+ <ellipse cx="555" cy="375" rx="125" ry="74" fill="#7897bb" opacity=".36"/>
+ <line x1="0" y1="530" x2="880" y2="530" stroke="#222" stroke-width="3"/><line x1="0" y1="0" x2="0" y2="530" stroke="#222" stroke-width="3"/>
+ <path d="M170 120 C330 130 470 180 610 255" fill="none" stroke="#d23f36" stroke-width="4" stroke-dasharray="13 10"/>
+ <circle cx="175" cy="120" r="8" fill="#d23f36"/><circle cx="575" cy="235" r="8" fill="#d23f36"/>
+ <path d="M380 430 C455 440 510 447 575 455" fill="none" stroke="#2f68b0" stroke-width="4"/><circle cx="435" cy="440" r="8" fill="#2f68b0"/><circle cx="555" cy="452" r="8" fill="#2f68b0"/>
+ <text x="165" y="75" font-family="Arial" font-size="24" fill="#bd312b" font-weight="700">quadratic V ∝ φ²</text>
+ <text x="120" y="445" font-family="Arial" font-size="24" fill="#24599b" font-weight="700">plateau model</text>
+ <text x="560" y="360" font-family="Arial" font-size="21" fill="#334a68">allowed low-r region</text>
+ <text x="425" y="585" font-family="Georgia" font-size="28">scalar spectral index nₛ</text>
+ <text x="-320" y="-75" transform="rotate(-90)" font-family="Georgia" font-size="28">tensor-to-scalar ratio r</text>
+</g>
+<g transform="translate(1060 190)" font-family="Arial,sans-serif">
+ <rect width="270" height="455" rx="16" fill="#e8f0f6" stroke="#97b2ca"/>
+ <text x="25" y="48" font-size="25" font-weight="700">What the project finds</text>
+ <text x="25" y="95" font-size="17">N = 60:</text>
+ <text x="25" y="128" font-size="18" fill="#bd312b">φ²: r ≈ 0.132</text>
+ <text x="25" y="160" font-size="18" fill="#24599b">plateau: r ≈ 0.003</text>
+ <line x1="25" y1="190" x2="245" y2="190" stroke="#9fb0bd"/>
+ <text x="25" y="230" font-size="17">compressed benchmark:</text>
+ <text x="25" y="260" font-size="18">r &lt; 0.034</text>
+ <text x="25" y="300" font-size="15" fill="#4f5c68">The simple quadratic</text><text x="25" y="322" font-size="15" fill="#4f5c68">prediction is too high.</text>
+ <text x="25" y="360" font-size="15" fill="#4f5c68">Low-r plateau models</text><text x="25" y="382" font-size="15" fill="#4f5c68">remain compatible with</text><text x="25" y="404" font-size="15" fill="#4f5c68">the tensor bound.</text>
+</g>
+<text x="700" y="790" text-anchor="middle" font-family="Georgia,serif" font-size="25" font-style="italic">The useful question is not “is inflation true?” but “which inflationary dynamics survive the measurements?”</text>
+</svg>
