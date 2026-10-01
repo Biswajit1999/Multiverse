@@ -1,0 +1,427 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage[margin=24mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{tcolorbox}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{url}
+
+\graphicspath{{../assets/images/}}
+\definecolor{navy}{HTML}{111827}
+\definecolor{blue}{HTML}{3558D8}
+\definecolor{cyan}{HTML}{1D8EA7}
+\definecolor{amber}{HTML}{C9882B}
+\definecolor{paper}{HTML}{F7F5EF}
+\definecolor{muted}{HTML}{5F6775}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=cyan,pdftitle={Multiverse Cosmology Lab},pdfauthor={Biswajit Jana}}
+\setstretch{1.08}
+\setlist{leftmargin=*,itemsep=3pt,topsep=5pt}
+\captionsetup{font=small,labelfont=bf}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Multiverse Cosmology Lab}
+\fancyhead[R]{\small Biswajit Jana}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{\scriptsize \copyright\ 2026 Biswajit Jana}
+\renewcommand{\headrulewidth}{0.3pt}
+\titleformat{\chapter}[display]{\normalfont\bfseries\color{navy}}{\filleft\Large\color{blue}\chaptername\ \thechapter}{1ex}{\titlerule\vspace{1ex}\Huge}
+\titleformat{\section}{\Large\bfseries\color{navy}}{\thesection}{0.7em}{}
+
+\newtcolorbox{plainbox}[1]{colback=paper,colframe=blue!35!white,boxrule=0.5pt,arc=2mm,left=3mm,right=3mm,top=2mm,bottom=2mm,title=\textbf{#1},fonttitle=\color{navy}}
+\newtcolorbox{statusbox}[1]{colback=blue!4!white,colframe=blue!45!white,boxrule=0.6pt,arc=2mm,left=3mm,right=3mm,top=2mm,bottom=2mm,title=\textbf{#1},fonttitle=\color{navy}}
+
+\newcommand{\fullfigure}[3]{%
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth,height=0.76\textheight,keepaspectratio]{#1}
+\caption{#2 \textit{#3}}
+\end{figure}}
+
+\begin{document}
+
+\begin{titlepage}
+\pagecolor{paper}\color{navy}
+\centering
+\vspace*{20mm}
+{\Large\bfseries MULTIVERSE COSMOLOGY LAB\par}
+\vspace{8mm}
+{\Huge\bfseries From the Hot Big Bang to Inflation, Reheating, and Model-Dependent Multiverse Scenarios\par}
+\vspace{7mm}
+{\Large A research monograph and open computational notebook\par}
+\vfill
+\includegraphics[width=0.94\textwidth,height=0.38\textheight,keepaspectratio]{01_hero_main.png}
+\vfill
+{\Large\bfseries Biswajit Jana\par}
+\vspace{2mm}
+{\large 2026\par}
+\vspace{8mm}
+{\small Author website: \url{https://biswajit1999.github.io/Biswajit_Jana.github.io/}\par}
+{\small GitHub: \url{https://github.com/Biswajit1999}\par}
+{\small LinkedIn: \url{https://www.linkedin.com/in/biswajit-jana-27011a151/}\par}
+\vspace{10mm}
+{\footnotesize \copyright\ 2026 Biswajit Jana. All rights reserved for the original visual presentation and authored text. Scientific equations, public data, and cited results remain attributable to their original sources.}
+\end{titlepage}
+\nopagecolor\color{navy}
+
+\chapter*{Preface: what this report is trying to do}
+\addcontentsline{toc}{chapter}{Preface: what this report is trying to do}
+The phrase ``the Big Bang'' is often used as if it were the name of a single instant at which everything began. That is not quite what modern cosmology says. The hot Big Bang model is a remarkably successful description of an early universe that was hot, dense, expanding, and close to homogeneous. It explains nucleosynthesis, the cosmic microwave background (CMB), and the subsequent growth of cosmic structure. But it does not, by itself, tell us what physical mechanism produced that hot state.
+
+This report asks a narrower and more useful question: \emph{what candidate histories can lead into the hot Big Bang, and which parts of those histories can be tested?} The working synthesis developed throughout the accompanying repository is that inflation followed by reheating currently provides the strongest end-to-end mechanism implemented in the project. That is not the same as proving inflation uniquely correct, proving a multiverse, or proving that spacetime had an absolute beginning.
+
+\begin{plainbox}{How to read the status labels}
+Throughout this report, statements are separated into four categories: \textbf{observed} (supported directly by measurements), \textbf{calculated} (derived from a specified model), \textbf{model-dependent} (true only within a particular theoretical construction), and \textbf{open} (not yet settled by current physics).
+\end{plainbox}
+
+\tableofcontents
+\clearpage
+
+\chapter{What do cosmologists actually mean by the Big Bang?}
+\section{The simple picture}
+If we run the observed cosmic expansion backward using general relativity, the universe becomes denser and hotter. Galaxies are closer together, radiation is more energetic, and at sufficiently early times ordinary atoms cannot exist. The phrase ``hot Big Bang'' refers to this early thermal phase and its subsequent expansion, not necessarily to a literal explosion into pre-existing space.
+
+For a homogeneous and isotropic universe the spacetime geometry is described by the Friedmann--Lemaitre--Robertson--Walker metric,
+\begin{equation}
+ ds^2=-c^2dt^2+a^2(t)\left[\frac{dr^2}{1-kr^2}+r^2d\Omega^2\right],
+\end{equation}
+where $a(t)$ is the scale factor and $k$ describes spatial curvature. Einstein's equations reduce to the Friedmann equation,
+\begin{equation}
+ H^2 \equiv \left(\frac{\dot a}{a}\right)^2 = \frac{8\pi G}{3}\rho - \frac{k c^2}{a^2}+\frac{\Lambda c^2}{3}.
+\end{equation}
+The conservation equation is
+\begin{equation}
+ \dot\rho+3H\left(\rho+\frac{p}{c^2}\right)=0.
+\end{equation}
+
+\begin{plainbox}{Layman translation}
+The scale factor $a(t)$ is a single number that tells us how distances between comoving points change with time. A growing $a(t)$ means cosmic expansion. The Friedmann equation says that the expansion rate is controlled by the energy content, spatial curvature, and any cosmological constant.
+\end{plainbox}
+
+\section{What the model explains well}
+The hot Big Bang framework accounts for several independent relics: primordial light-element abundances, the near-blackbody CMB, and the growth of structure from early density fluctuations. The discovery and precision mapping of the CMB made the thermal history quantitatively testable. Planck's measurements, for example, tightly constrain the parameters of the standard $\Lambda$CDM cosmology \cite{planck2018params}.
+
+\fullfigure{06_cmb_explainer.png}{The cosmic microwave background as the observable fossil of the early thermal universe.}{Conceptual explanatory artwork; measured spectra are treated separately in the data analysis.}
+
+\chapter{Why ask what came before the hot Big Bang?}
+The hot Big Bang describes a state, but not uniquely the dynamical cause of that state. If we extrapolate a classical FLRW solution backward, densities and curvatures can diverge. This signals that the classical description is incomplete, not that we have experimentally observed an absolute creation event.
+
+Hawking--Penrose singularity theorems establish geodesic incompleteness under specific assumptions \cite{hawkingpenrose1970}. The Borde--Guth--Vilenkin result gives a different kinematical statement: if the average expansion rate along a suitable past-directed geodesic satisfies
+\begin{equation}
+ H_{\mathrm{av}}>0,
+\end{equation}
+then that geodesic is past incomplete \cite{bgv2003}. Past incompleteness means that the inflating description cannot be extended indefinitely along that geodesic; it does not by itself specify what replaces the boundary.
+
+\begin{statusbox}{Open question}
+What physical state, boundary condition, quantum description, or earlier phase replaces the past limit of the classical or inflating description? Current physics does not provide a unique empirical answer.
+\end{statusbox}
+
+\fullfigure{09_origins_triptych.png}{Three ways of interpreting an earlier cosmic history: inflationary extension, nonsingular bounce, and cyclic evolution.}{Conceptual comparison; each scenario requires a separate dynamical model.}
+
+\chapter{Inflation: accelerated expansion before the hot phase}
+\section{The core idea}
+Inflation is a period of accelerated expansion,
+\begin{equation}
+ \ddot a>0,
+\end{equation}
+which can arise if the energy density is dominated by a slowly evolving scalar field $\phi$. For a canonical field,
+\begin{equation}
+ \rho_\phi=\frac12\dot\phi^2+V(\phi),\qquad
+ p_\phi=\frac12\dot\phi^2-V(\phi),
+\end{equation}
+and the field obeys
+\begin{equation}
+ \ddot\phi+3H\dot\phi+V_{,\phi}=0.
+\end{equation}
+When potential energy dominates, $p\simeq-\rho$, which drives accelerated expansion. Inflation was proposed to address the horizon and flatness problems and to provide a mechanism for generating primordial perturbations \cite{guth1981,starobinsky1980}.
+
+\section{Slow-roll language}
+Potential slow-roll parameters are
+\begin{equation}
+ \epsilon_V=\frac{M_{\rm Pl}^2}{2}\left(\frac{V_{,\phi}}{V}\right)^2,
+ \qquad
+ \eta_V=M_{\rm Pl}^2\frac{V_{,\phi\phi}}{V}.
+\end{equation}
+A slowly rolling field has roughly $\epsilon_V\ll 1$ and $|\eta_V|\ll1$. The number of e-folds is
+\begin{equation}
+ N=\int H\,dt\simeq \frac{1}{M_{\rm Pl}^2}\int_{\phi_{\rm end}}^{\phi_*}\frac{V}{V_{,\phi}}\,d\phi.
+\end{equation}
+
+\begin{plainbox}{Layman translation}
+During inflation, space expands extremely rapidly while the field changes only slowly. ``E-folds'' count expansion logarithmically: one e-fold multiplies the scale factor by $e$. Around 50--60 e-folds between the observable modes leaving the horizon and the end of inflation is typical in many models, but the exact number depends on reheating and the model history.
+\end{plainbox}
+
+\fullfigure{08_inflation_to_structure_notebook.png}{From inflation to reheating, the hot Big Bang, the CMB, and structure.}{The equations are schematic guides; numerical calculations in the repository provide the quantitative layer.}
+
+\chapter{Quantum fluctuations: how tiny seeds become galaxies}
+Inflation does more than expand the background. Quantum fluctuations of the inflaton and the metric are stretched to macroscopic scales. The gauge-invariant scalar perturbations can be described using the Mukhanov--Sasaki variable $v_k$,
+\begin{equation}
+ v_k''+\left(k^2-\frac{z''}{z}\right)v_k=0,
+ \qquad z=a\frac{\dot\phi}{H},
+\end{equation}
+with foundations developed by Mukhanov and Sasaki \cite{mukhanov1985,sasaki1986}.
+
+For single-field slow-roll inflation, the curvature power spectrum is approximately
+\begin{equation}
+ \mathcal P_{\mathcal R}(k)\simeq \frac{H_*^2}{8\pi^2M_{\rm Pl}^2\epsilon_*},
+\end{equation}
+and the tensor spectrum is
+\begin{equation}
+ \mathcal P_T(k)\simeq\frac{2H_*^2}{\pi^2M_{\rm Pl}^2}.
+\end{equation}
+The tensor-to-scalar ratio is therefore
+\begin{equation}
+ r\equiv\frac{\mathcal P_T}{\mathcal P_{\mathcal R}}\simeq16\epsilon_*.
+\end{equation}
+
+\fullfigure{03_cmb_to_structure_banner.png}{A visual bridge from primordial fluctuations to the later cosmic web.}{Conceptual illustration: the scientific link is quantified through the primordial spectrum, transfer functions, and structure-growth calculations.}
+
+\chapter{Reheating: turning an inflating state into a hot universe}
+Inflation by itself leaves the universe dominated by the inflating sector. A hot Big Bang requires that this energy be transferred into particles and radiation. A simple phenomenological description is
+\begin{align}
+ \dot\rho_\phi+3H(1+w_\phi)\rho_\phi&=-\Gamma_\phi\rho_\phi,\\
+ \dot\rho_R+4H\rho_R&=+\Gamma_\phi\rho_\phi,\\
+ H^2&=\frac{\rho_\phi+\rho_R}{3M_{\rm Pl}^2}.
+\end{align}
+When radiation dominates, the familiar hot thermal history begins. More complicated dynamics, including preheating by parametric resonance, can occur in specific models \cite{kofman1994}.
+
+A characteristic perturbative reheating temperature scales as
+\begin{equation}
+ T_{\rm reh}\sim\left(\frac{90}{\pi^2g_*}\right)^{1/4}\sqrt{\Gamma_\phi M_{\rm Pl}},
+\end{equation}
+up to model-dependent factors.
+
+\begin{statusbox}{Working synthesis}
+Inflation plus reheating is the strongest complete bridge implemented in this project from a pre-hot dynamical phase into a hot, radiation-dominated universe. That statement is narrower than claiming that inflation is uniquely proven.
+\end{statusbox}
+
+\fullfigure{12_cosmic_timeline_to_the_multiverse.png}{The project's causal narrative from quantum fluctuations to a hot universe and later structure.}{The multiverse branch is conditional on additional inflationary dynamics and is not an observed stage of the timeline.}
+
+\chapter{The CMB: where the theory meets data}
+The CMB temperature field can be decomposed into spherical harmonics. Its angular power spectrum $C_\ell$ is often plotted as
+\begin{equation}
+ D_\ell\equiv\frac{\ell(\ell+1)}{2\pi}C_\ell.
+\end{equation}
+The acoustic peaks encode the physics of the photon--baryon plasma before recombination. Peak positions, heights, damping, polarization, and gravitational lensing constrain the geometry, matter content, ionization history, and the primordial spectrum.
+
+NASA's LAMBDA archive provides plotting tables that combine recent measurements for visualization. The current TT compilation includes Planck, ACT DR6, SPT, and SPT-3G; TE and EE compilations add further polarization measurements \cite{lambda2026}. ACT DR6 reports TT/TE/EE power spectra over a large sky area and finds the spectra well described by $\Lambda$CDM \cite{actdr6}. SPT-3G D1 provides deep small-scale TT/TE/EE measurements with strong constraining power \cite{spt3g2025}.
+
+\begin{plainbox}{Important distinction}
+A plotting table is not the same as a cosmological likelihood. A publication-grade parameter inference requires covariance matrices, foreground and nuisance modeling, calibration uncertainties, and the experiment likelihood software. The interactive website uses the public tables for visualization, not for a replacement likelihood analysis.
+\end{plainbox}
+
+\fullfigure{14_testing_the_earliest_universe.png}{How observations can test early-universe physics.}{Conceptual roadmap linking CMB, polarization, large-scale structure, 21-cm observations, and gravitational-wave probes.}
+
+\chapter{Inflation model discrimination in the $n_s$--$r$ plane}
+Two common observables are the scalar spectral index $n_s$ and tensor-to-scalar ratio $r$,
+\begin{equation}
+ n_s\simeq1-6\epsilon_V+2\eta_V,\qquad r\simeq16\epsilon_V.
+\end{equation}
+Planck 2018 found a scalar tilt below exact scale invariance, $n_s=0.9649\pm0.0042$ for the quoted analysis \cite{planck2018inflation}. Combining CMB data with BICEP/Keck strongly constrains primordial tensor power \cite{bicepkeck2021}.
+
+At $N=60$, the repository's first-order slow-roll implementation gives approximately
+\begin{equation}
+ (n_s,r)_{\phi^2}\approx(0.96694,0.13223),
+\end{equation}
+and
+\begin{equation}
+ (n_s,r)_{\rm Starobinsky}\approx(0.96783,0.002964).
+\end{equation}
+The two models can have similar scalar tilt but dramatically different tensor amplitudes. That is exactly the kind of observable discrimination a useful early-universe theory must face.
+
+\fullfigure{05_ns_r_constraints.png}{Inflationary model trajectories in the scalar spectral-index versus tensor-ratio plane.}{Illustrative visualization; the repository's numerical calculations and cited experimental constraints are the quantitative reference.}
+
+\chapter{False-vacuum decay and bubble nucleation}
+A metastable vacuum can decay through quantum tunnelling. In the semiclassical approximation,
+\begin{equation}
+ \frac{\Gamma}{V}\sim A\exp\left(-\frac{B}{\hbar}\right),
+\end{equation}
+where $B$ is the Euclidean action difference between the bounce solution and the false vacuum. Coleman and De Luccia included gravity in this problem \cite{cdl1980}.
+
+For an $O(4)$-symmetric Euclidean geometry,
+\begin{equation}
+ ds_E^2=d\xi^2+\rho^2(\xi)d\Omega_3^2,
+\end{equation}
+with coupled equations
+\begin{align}
+ \phi''+3\frac{\rho'}{\rho}\phi'&=V_{,\phi},\\
+ \rho''&=-\frac{\rho}{3M_{\rm Pl}^2}\left(\phi'^2+V\right).
+\end{align}
+The Hawking--Moss limit describes a different transition in which the field fluctuates to the top of the barrier \cite{hawkingmoss1982}.
+
+\fullfigure{04_false_vacuum_decay.png}{False-vacuum decay and bubble nucleation.}{Conceptual visualization of a semiclassical field-theory process; not an image of an observed bubble universe.}
+\fullfigure{13_landscape_of_vacua.png}{A conceptual landscape of metastable vacua and transitions.}{Model-dependent theory space, not an astronomical map.}
+
+\chapter{Eternal inflation and the multiverse branch}
+During slow roll, the characteristic quantum fluctuation of a light scalar over a Hubble time is roughly
+\begin{equation}
+ \delta\phi_q\simeq\frac{H}{2\pi},
+\end{equation}
+while the classical drift is approximately
+\begin{equation}
+ \delta\phi_{\rm cl}\simeq\frac{|V_{,\phi}|}{3H^2}.
+\end{equation}
+Their ratio can be written schematically as
+\begin{equation}
+ \mathcal R_{\rm EI}\simeq\frac{3H^3}{2\pi|V_{,\phi}|}.
+\end{equation}
+Where $\mathcal R_{\rm EI}>1$, stochastic fluctuations can dominate the local classical roll in suitable models. This is one route to self-reproduction and eternal inflation \cite{linde1986}.
+
+\begin{plainbox}{What the word multiverse means here}
+The report uses ``multiverse'' specifically for a theoretical ensemble of causally separated reheating regions or vacua arising in a stated model. It does not use the word as a synonym for ``everything beyond our current telescope horizon'', and it does not treat many-worlds quantum mechanics as the same proposal.
+\end{plainbox}
+
+\fullfigure{17_if_universes_are_many.png}{If universes are many: an analogy for thinking about multiple cosmic regions.}{Authorial conceptual analogy, not observational evidence.}
+\fullfigure{10_bubble_multiverse_closeup.png}{Bubble-universe visualization in an inflating background.}{Conceptual illustration only.}
+
+\chapter{Horizons: what does ``outside'' actually mean?}
+The particle horizon is controlled by conformal time,
+\begin{equation}
+ \eta(t)=\int^t\frac{dt'}{a(t')},
+\end{equation}
+and a comoving particle-horizon distance can be written
+\begin{equation}
+ \chi_p(t)=c\int_{t_i}^{t}\frac{dt'}{a(t')}.
+\end{equation}
+An event horizon, when one exists, depends on the future integral
+\begin{equation}
+ \chi_e(t)=c\int_t^\infty\frac{dt'}{a(t')}.
+\end{equation}
+
+\begin{plainbox}{Layman translation}
+A horizon is not a physical wall. It marks what signals have had time to reach us, or what signals will ever be able to reach us. A region can lie beyond today's observable horizon and still belong to the same connected cosmological spacetime.
+\end{plainbox}
+
+\fullfigure{15_horizons_within_horizons.png}{Nested causal horizons and model-dependent pocket regions.}{The geometry is explanatory artwork; causal horizons are calculated from the scale-factor history.}
+
+\chapter{Bounce and cyclic alternatives}
+Inflation is not the only attempt to extend the hot Big Bang backward. In effective loop quantum cosmology, a commonly used modified Friedmann equation is
+\begin{equation}
+ H^2=\frac{8\pi G}{3}\rho\left(1-\frac{\rho}{\rho_c}\right),
+\end{equation}
+so that $H=0$ at a critical density $\rho_c$, allowing a bounce in the effective description \cite{ashtekarsingh2011}.
+
+Ekpyrotic and cyclic scenarios use a contracting phase with a stiff effective equation of state to smooth and flatten the universe before a transition to expansion. Cyclic constructions explore repeated phases of expansion and contraction \cite{steinhardtturok2002}.
+
+The challenge is not simply to draw a nonsingular scale factor. The model must generate acceptable perturbations, remain stable through its high-density transition, and make predictions that can be compared with observation.
+
+\fullfigure{07_four_model_comparison.png}{Four broad approaches to the pre-hot-Big-Bang problem.}{The comparison separates mechanism from empirical status.}
+\fullfigure{18_four_cosmic_paths.png}{A second model map emphasizing the distinct assumptions of inflationary, bounce, cyclic, and quantum-boundary histories.}{Conceptual summary.}
+
+\chapter{Quantum cosmology: a boundary condition instead of an earlier classical era}
+Canonical quantum gravity imposes a Hamiltonian constraint of the schematic form
+\begin{equation}
+ \hat{\mathcal H}\Psi[h_{ij},\phi]=0.
+\end{equation}
+In minisuperspace this can reduce to an equation in a small number of variables such as the scale factor,
+\begin{equation}
+ \left[-\frac{d^2}{da^2}+U(a)\right]\Psi(a)=0.
+\end{equation}
+The Hartle--Hawking no-boundary proposal and Vilenkin's tunnelling proposal use different boundary prescriptions for the universe's wave function \cite{hartlehawking1983,vilenkin1984}.
+
+These approaches do not necessarily ask for a classical ``before''. Instead, the origin problem becomes a question about quantum boundary conditions, semiclassical histories, interpretation, and measure.
+
+\chapter{Could there be a higher-dimensional ``outside''?}
+Some theories embed lower-dimensional spacetimes in a higher-dimensional geometry. In such a model, an external embedding can be mathematically meaningful. But standard cosmology does not require the whole universe to sit inside an ordinary surrounding room, and no current observation establishes a literal external vantage point or external observers.
+
+The useful distinction is between \textbf{intrinsic geometry} -- what inhabitants can measure within spacetime -- and \textbf{embedding geometry} -- how that spacetime might be represented inside a larger mathematical space. An embedding can be a theoretical tool without being an observable physical location.
+
+\fullfigure{11_beyond_our_bubble.png}{A speculative higher-dimensional viewpoint on a bubble universe.}{Conceptual thought experiment only; no evidence for an external observer is implied.}
+
+\chapter{Inside one bubble: how a local hot universe can emerge}
+A nucleated region in an inflating background can have its own internal cosmological evolution. In suitable models, the interior undergoes expansion, energy conversion, radiation domination, recombination, and later structure formation. The details depend on the potential, bubble geometry, reheating mechanism, and initial conditions.
+
+\fullfigure{16_inside_one_bubble_universe.png}{A conceptual sequence inside a single bubble region from nucleation to structure.}{The stages are illustrative; each transition requires a specified dynamical model.}
+
+\chapter{The long future: horizons keep changing}
+If late-time accelerated expansion continues, increasingly distant comoving regions cross the cosmic event horizon. Bound structures remain local while large-scale regions become causally inaccessible. The same equations that define early-universe horizons therefore also shape the far future.
+
+\fullfigure{19_long_future_of_a_bubble_universe.png}{The long future of an accelerating cosmic region.}{Conceptual visualization of changing accessibility and horizon structure.}
+
+\chapter{What would count as evidence for something deeper?}
+A useful theory must create opportunities to be wrong. Concrete progress could come from:
+\begin{enumerate}
+\item a detection or stronger limit on primordial tensor modes;
+\item improved measurements of primordial non-Gaussianity;
+\item statistically robust features or running in the primordial power spectrum;
+\item distinctive stochastic gravitational-wave backgrounds;
+\item 21-cm constraints on small-scale primordial structure;
+\item a model-specific bubble-collision signature with a consistent statistical framework;
+\item a bounce or cyclic signature that survives foregrounds and parameter degeneracies;
+\item theoretical inconsistency that excludes a candidate history before observation is even required.
+\end{enumerate}
+
+The absence of a signal can rule out a specific parameterized model even when it cannot rule out a broad philosophical category.
+
+\fullfigure{02_multiverse_perspective_infographic.png}{A perspective map separating observable, extrapolated, and model-dependent statements.}{The purpose of this figure is epistemic: to show where evidence ends and theoretical extrapolation begins.}
+
+\chapter{Current synthesis}
+The strongest defensible conclusion of this project is conditional:
+
+\begin{statusbox}{Current research verdict}
+\textbf{Inflation followed by reheating} provides the strongest complete mechanism implemented here for connecting a pre-hot dynamical state to a hot radiation-dominated universe while also generating observable primordial perturbations. The deeper questions -- what selected the inflating state, whether spacetime had an earlier phase, and whether eternal inflation produces physically realized pocket universes -- remain open.
+\end{statusbox}
+
+This conclusion is not based on the visual appeal of an origin story. It follows the project's central methodological rule: begin with explicit equations, calculate a history, connect it to observables, and state what would falsify it.
+
+\fullfigure{20_current_research_verdict.png}{Current synthesis of the Multiverse Cosmology Lab.}{Authorial synthesis of the implemented theory, numerical experiments, and observational constraints; not a claim of proof.}
+
+\chapter{Reproducibility and limits}
+The accompanying repository keeps theory notes, numerical code, notebooks, observational inputs, tests, figures, and model-status statements together. Reproducibility matters because cosmological origin questions are unusually vulnerable to mixing mathematical possibility with empirical fact.
+
+The public website's CMB observatory uses NASA/LAMBDA plotting tables for scientific visualization. Those tables are appropriate for reproducing public plots, but they are not substitutes for experiment likelihoods. Likewise, generated conceptual images in this report are communication aids. They must not be mistaken for telescope images or data products.
+
+\section{A practical checklist}
+For every proposed model, the project asks:
+\begin{enumerate}
+\item What are the assumptions and degrees of freedom?
+\item What equations govern the background and perturbations?
+\item What initial or boundary conditions are required?
+\item Does the model reach a hot radiation-dominated phase?
+\item What observables does it predict?
+\item What data constrain or exclude those predictions?
+\item What remains model-dependent or interpretational?
+\item What future measurement could change the conclusion?
+\end{enumerate}
+
+\chapter*{Copyright and figure-use note}
+\addcontentsline{toc}{chapter}{Copyright and figure-use note}
+The original visual compositions, authored captions, layout, and narrative synthesis in this report are \copyright\ 2026 Biswajit Jana. Scientific equations, data, and published results are attributed to their original literature and archives. Conceptual figures should be cited as ``Biswajit Jana, Multiverse Cosmology Lab (2026)'' when reused, subject to any separate repository license.
+
+\begin{thebibliography}{99}
+\bibitem{guth1981} A. H. Guth, ``Inflationary universe: A possible solution to the horizon and flatness problems,'' \emph{Phys. Rev. D} 23, 347 (1981). doi:10.1103/PhysRevD.23.347.
+\bibitem{starobinsky1980} A. A. Starobinsky, ``A new type of isotropic cosmological models without singularity,'' \emph{Phys. Lett. B} 91, 99--102 (1980). doi:10.1016/0370-2693(80)90670-X.
+\bibitem{mukhanov1985} V. F. Mukhanov, ``Gravitational instability of the universe filled with a scalar field,'' \emph{JETP Lett.} 41, 493--496 (1985).
+\bibitem{sasaki1986} M. Sasaki, ``Large scale quantum fluctuations in the inflationary universe,'' \emph{Prog. Theor. Phys.} 76, 1036 (1986). doi:10.1143/PTP.76.1036.
+\bibitem{kofman1994} L. Kofman, A. Linde, and A. A. Starobinsky, ``Reheating after inflation,'' \emph{Phys. Rev. Lett.} 73, 3195 (1994). arXiv:hep-th/9405187.
+\bibitem{cdl1980} S. Coleman and F. De Luccia, ``Gravitational effects on and of vacuum decay,'' \emph{Phys. Rev. D} 21, 3305 (1980). doi:10.1103/PhysRevD.21.3305.
+\bibitem{hawkingmoss1982} S. W. Hawking and I. G. Moss, ``Supercooled phase transitions in the very early universe,'' \emph{Phys. Lett. B} 110, 35--38 (1982). doi:10.1016/0370-2693(82)90946-7.
+\bibitem{linde1986} A. D. Linde, ``Eternally existing self-reproducing chaotic inflationary universe,'' \emph{Phys. Lett. B} 175, 395--400 (1986). doi:10.1016/0370-2693(86)90611-8.
+\bibitem{hawkingpenrose1970} S. W. Hawking and R. Penrose, ``The singularities of gravitational collapse and cosmology,'' \emph{Proc. R. Soc. A} 314, 529--548 (1970). doi:10.1098/rspa.1970.0021.
+\bibitem{bgv2003} A. Borde, A. H. Guth, and A. Vilenkin, ``Inflationary spacetimes are incomplete in past directions,'' \emph{Phys. Rev. Lett.} 90, 151301 (2003). doi:10.1103/PhysRevLett.90.151301.
+\bibitem{hartlehawking1983} J. B. Hartle and S. W. Hawking, ``Wave function of the Universe,'' \emph{Phys. Rev. D} 28, 2960 (1983). doi:10.1103/PhysRevD.28.2960.
+\bibitem{vilenkin1984} A. Vilenkin, ``Quantum creation of universes,'' \emph{Phys. Rev. D} 30, 509(R) (1984). doi:10.1103/PhysRevD.30.509.
+\bibitem{ashtekarsingh2011} A. Ashtekar and P. Singh, ``Loop Quantum Cosmology: A Status Report,'' \emph{Class. Quantum Grav.} 28, 213001 (2011). arXiv:1108.0893.
+\bibitem{steinhardtturok2002} P. J. Steinhardt and N. Turok, ``A cyclic model of the universe,'' \emph{Science} 296, 1436--1439 (2002). doi:10.1126/science.1070462.
+\bibitem{planck2018params} Planck Collaboration, ``Planck 2018 results. VI. Cosmological parameters,'' \emph{Astron. Astrophys.} 641, A6 (2020). arXiv:1807.06209.
+\bibitem{planck2018inflation} Planck Collaboration, ``Planck 2018 results. X. Constraints on inflation,'' \emph{Astron. Astrophys.} 641, A10 (2020). arXiv:1807.06211.
+\bibitem{bicepkeck2021} BICEP/Keck Collaboration, ``Improved constraints on primordial gravitational waves using Planck, WMAP, and BICEP/Keck observations through the 2018 observing season,'' \emph{Phys. Rev. Lett.} 127, 151301 (2021). arXiv:2110.00483.
+\bibitem{actdr6} T. Louis et al. (ACT Collaboration), ``The Atacama Cosmology Telescope: DR6 Power Spectra, Likelihoods and $\Lambda$CDM Parameters,'' arXiv:2503.14452 (2025).
+\bibitem{spt3g2025} E. Camphuis et al. (SPT-3G Collaboration), ``SPT-3G D1: CMB temperature and polarization power spectra and cosmology from 2019 and 2020 observations of the SPT-3G Main field,'' arXiv:2506.20707 (2025).
+\bibitem{lambda2026} NASA LAMBDA Archive Team, ``CMB Power Spectra Graphics and Plotting Data,'' NASA Goddard Space Flight Center, accessed 2026, \url{https://lambda.gsfc.nasa.gov/education/lambda_graphics/cmb_power_spectra.html}.
+\end{thebibliography}
+
+\end{document}
