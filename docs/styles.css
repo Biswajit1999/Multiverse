@@ -531,3 +531,6 @@ p{margin-top:0}
   .figure-lightbox{padding:10px}
   .figure-lightbox-meta{grid-template-columns:1fr}
 }
+
+.figure-rights{position:relative;z-index:5}
+#heroScene{z-index:2}
