@@ -1,0 +1,8 @@
+{
+  "generated_for_project_release": "1.0.0",
+  "benchmarks": [
+    {"id":"planck2018_bk18","label":"Planck 2018 + BICEP/Keck 2018 benchmark","ns_mean":0.9649,"ns_sigma":0.0042,"r95_upper":0.036,"pivot_mpc_inv":0.05},
+    {"id":"cmb_end_2025","label":"Planck+SPT+ACT+BICEP/Keck end-of-2025 synthesis","ns_mean":0.9682,"ns_sigma":0.0032,"r95_upper":0.034,"pivot_mpc_inv":0.05,"doi":"10.33232/001c.164435"},
+    {"id":"cmb_desi_end_2025","label":"CMB end-of-2025 + DESI BAO","ns_mean":0.9728,"ns_sigma":0.0029,"r95_upper":0.034,"pivot_mpc_inv":0.05,"note":"The cited synthesis reports negligible DESI impact on r and an upward shift in n_s."}
+  ]
+}
