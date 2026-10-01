@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="t d">
+<title id="t">From primordial fluctuations to the cosmic web</title><desc id="d">Conceptual scientific illustration of a luminous cosmic web with nodes and filaments, used as a visual transition between primordial perturbations and large-scale structure.</desc>
+<defs><radialGradient id="bg"><stop stop-color="#132c4b"/><stop offset=".55" stop-color="#071426"/><stop offset="1" stop-color="#030811"/></radialGradient><filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<rect width="1600" height="900" fill="url(#bg)"/>
+<g fill="none" stroke="#7398ed" stroke-opacity=".40" stroke-width="6" filter="url(#glow)">
+ <path d="M-50 690 C180 470 320 680 520 430 S850 260 1030 470 S1390 590 1650 300"/>
+ <path d="M-20 170 C230 300 345 90 610 245 S950 410 1190 220 S1450 80 1630 150"/>
+ <path d="M160 920 C300 690 510 760 690 580 S950 450 1140 650 S1400 785 1580 620"/>
+ <path d="M120 80 C240 260 410 330 520 430 M610 245 C710 380 780 470 690 580 M1030 470 C1110 390 1140 310 1190 220 M1140 650 C1250 540 1330 500 1450 500"/>
+</g>
+<g fill="#f0c675" filter="url(#glow)">
+ <circle cx="160" cy="690" r="10"/><circle cx="520" cy="430" r="14"/><circle cx="610" cy="245" r="11"/><circle cx="690" cy="580" r="13"/><circle cx="1030" cy="470" r="15"/><circle cx="1190" cy="220" r="12"/><circle cx="1140" cy="650" r="12"/><circle cx="1450" cy="500" r="9"/>
+</g>
+<g fill="#c7d8ff" opacity=".78"><circle cx="85" cy="280" r="2"/><circle cx="390" cy="180" r="2"/><circle cx="780" cy="150" r="2"/><circle cx="910" cy="710" r="2"/><circle cx="1320" cy="330" r="2"/><circle cx="1500" cy="720" r="2"/></g>
+<text x="70" y="80" font-family="Georgia,serif" font-size="42" fill="#eef4ff">Primordial seeds → large-scale structure</text>
+<text x="72" y="120" font-family="Arial,sans-serif" font-size="18" fill="#9fb5d2">conceptual bridge: the measured primordial spectrum seeds the later cosmic web</text>
+</svg>
