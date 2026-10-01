@@ -105,27 +105,22 @@ if(!reduced&&"IntersectionObserver" in window){
   revealNodes.forEach(el=>io.observe(el));
 }
 
-/* restrained image parallax */
+/* scroll-linked depth: move whole figure cards, never crop the image */
 if(!reduced){
   const cards=[...document.querySelectorAll(".parallax-card")];
-  let py=0;
-  function parallaxTick(){
+  function depthTick(){
     const vh=innerHeight;
     for(const card of cards){
-      const img=card.querySelector("img");if(!img)continue;
       const r=card.getBoundingClientRect();
-      if(r.bottom<0||r.top>vh)continue;
-      const depth=Number(card.dataset.depth||.035);
-      const target=((r.top+r.height*.5)-vh*.5)*-depth;
-      const prev=Number(img.dataset.parallaxY||0);
-      const next=prev+(target-prev)*.08;
-      img.dataset.parallaxY=next;
-      img.style.translate=`0 ${next}px`;
-      img.style.scale="1.035";
+      if(r.bottom<-120||r.top>vh+120)continue;
+      const centre=(r.top+r.height*.5-vh*.5)/vh;
+      const y=Math.max(-15,Math.min(15,-centre*18));
+      const rx=Math.max(-1.4,Math.min(1.4,centre*1.35));
+      card.style.transform=`perspective(1500px) translate3d(0,${y}px,0) rotateX(${rx}deg)`;
     }
-    requestAnimationFrame(parallaxTick);
+    requestAnimationFrame(depthTick);
   }
-  requestAnimationFrame(parallaxTick);
+  requestAnimationFrame(depthTick);
 }
 
 /* magnetic pills */
@@ -281,7 +276,7 @@ if(!reduced){
   }catch(err){console.warn("3D enhancement unavailable",err)}
 })();
 
-/* ---------- PAPER-STYLE DATA OBSERVATORY ---------- */
+/* ---------- SCIENTIFIC DATA OBSERVATORY ---------- */
 const COLORS={
   PLANCK:"#d62728",ACT:"#009e73",SPT:"#cc7a00",SPT3G:"#f0a000",WMAP:"#0072b2",
   BICEP:"#7cb342",POLARBEAR:"#25a9e0",ACTPOL:"#8e44ad",OTHER:"#4f5b67"
@@ -600,3 +595,209 @@ function updateLab(){
   drawNR(N);
 }
 if(slider){slider.addEventListener("input",updateLab);updateLab()}
+
+
+/* ---------- FIGURE RIGHTS + FULL-SIZE INSPECTOR ---------- */
+const FIGURE_META={
+  "01":"Inflating landscape",
+  "02":"Multiverse perspective",
+  "03":"CMB to cosmic structure",
+  "04":"False-vacuum decay",
+  "05":"Inflation constraints",
+  "06":"Cosmic microwave background",
+  "07":"Four cosmology models",
+  "08":"Inflation to structure notebook",
+  "09":"Origins comparison",
+  "10":"Bubble multiverse close-up",
+  "11":"Beyond our bubble",
+  "12":"Cosmic timeline",
+  "13":"Landscape of vacua",
+  "14":"Testing the earliest universe",
+  "15":"Horizons within horizons",
+  "16":"Inside one bubble universe",
+  "17":"If universes are many",
+  "18":"Four cosmic paths",
+  "19":"Long future of a bubble universe",
+  "20":"Current research verdict"
+};
+
+const lightbox=document.createElement("div");
+lightbox.className="figure-lightbox";
+lightbox.innerHTML=`
+  <button class="figure-lightbox-close" type="button" aria-label="Close image">Close ×</button>
+  <div class="figure-lightbox-card" role="dialog" aria-modal="true" aria-label="Full-size research figure">
+    <div class="figure-lightbox-image"><img alt=""></div>
+    <div class="figure-lightbox-meta">
+      <div>
+        <small class="lb-kicker"></small>
+        <b class="lb-title"></b>
+        <span class="lb-caption"></span>
+      </div>
+      <div class="figure-lightbox-actions">
+        <button class="lb-copy" type="button">Copy citation</button>
+        <button class="lb-close" type="button">Close</button>
+      </div>
+    </div>
+  </div>`;
+document.body.appendChild(lightbox);
+const lbImg=lightbox.querySelector(".figure-lightbox-image img");
+const lbKicker=lightbox.querySelector(".lb-kicker");
+const lbTitle=lightbox.querySelector(".lb-title");
+const lbCaption=lightbox.querySelector(".lb-caption");
+const lbCopy=lightbox.querySelector(".lb-copy");
+let currentCitation="";
+
+function closeFigure(){
+  lightbox.classList.remove("open");
+  document.body.style.overflow="";
+}
+function openFigure(img,fig,num,name){
+  lbImg.src=img.currentSrc||img.src;
+  lbImg.alt=img.alt||name;
+  lbKicker.textContent=`FIGURE ${num} · MULTIVERSE COSMOLOGY LAB`;
+  lbTitle.textContent=name;
+  const cap=fig.querySelector("figcaption")?.innerText?.trim()||"Conceptual research illustration.";
+  currentCitation=`Jana, B. (2026). Multiverse Cosmology Lab, Figure ${num}: ${name}. https://github.com/Biswajit1999/Multiverse`;
+  lbCaption.textContent=cap+" · © 2026 Biswajit Jana. Citation requested for reuse.";
+  lightbox.classList.add("open");
+  document.body.style.overflow="hidden";
+}
+lightbox.addEventListener("click",e=>{if(e.target===lightbox)closeFigure()});
+lightbox.querySelector(".figure-lightbox-close").addEventListener("click",closeFigure);
+lightbox.querySelector(".lb-close").addEventListener("click",closeFigure);
+addEventListener("keydown",e=>{if(e.key==="Escape")closeFigure()});
+lbImg.addEventListener("contextmenu",e=>e.preventDefault());
+lbImg.addEventListener("dragstart",e=>e.preventDefault());
+lbCopy.addEventListener("click",async()=>{
+  try{
+    await navigator.clipboard.writeText(currentCitation);
+    const old=lbCopy.textContent;lbCopy.textContent="Citation copied";
+    setTimeout(()=>lbCopy.textContent=old,1300);
+  }catch(e){}
+});
+
+for(const img of document.querySelectorAll(".research-image")){
+  const fig=img.closest("figure");if(!fig)continue;
+  const filename=(img.getAttribute("src")||"").split("/").pop()||"";
+  const match=filename.match(/^(\d{2})_/);
+  const num=match?match[1]:"—";
+  const name=FIGURE_META[num]||img.alt||"Research figure";
+  img.draggable=false;
+  img.setAttribute("aria-label",`${name}. Click to inspect full-size figure.`);
+  fig.classList.add("motion-card");
+  const classify=()=>{
+    const ratio=(img.naturalWidth||1)/(img.naturalHeight||1);
+    fig.classList.remove("image-tall","image-wide","image-landscape");
+    if(ratio<1)fig.classList.add("image-tall");
+    else if(ratio>2)fig.classList.add("image-wide");
+    else fig.classList.add("image-landscape");
+  };
+  if(img.complete)classify();else img.addEventListener("load",classify,{once:true});
+
+  if(!fig.querySelector(".figure-rights")){
+    const rights=document.createElement("div");
+    rights.className="figure-rights";
+    rights.innerHTML=`<span>Figure ${num} · ${name}</span><span>© 2026 Biswajit Jana</span>`;
+    img.insertAdjacentElement("afterend",rights);
+  }
+  fig.addEventListener("contextmenu",e=>e.preventDefault());
+  fig.addEventListener("dragstart",e=>e.preventDefault());
+  fig.addEventListener("click",e=>{
+    if(e.target.closest("a,button"))return;
+    openFigure(img,fig,num,name);
+  });
+}
+
+/* ---------- ADDITIONAL 3D SCENES ---------- */
+(async function initSecondary3D(){
+  if(reduced)return;
+  const canvases=[
+    {canvas:document.getElementById("multiverseScene"),kind:"multiverse"},
+    {canvas:document.getElementById("reportOrbit"),kind:"report"}
+  ].filter(x=>x.canvas);
+  if(!canvases.length)return;
+  try{
+    const THREE=state.three||await import("https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js");
+    const scenes=[];
+
+    function build(entry){
+      const canvas=entry.canvas,host=canvas.parentElement;
+      const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true,powerPreference:"high-performance"});
+      const scene=new THREE.Scene();
+      const camera=new THREE.PerspectiveCamera(entry.kind==="multiverse"?54:48,1,.1,80);
+      camera.position.z=entry.kind==="multiverse"?9:7.5;
+      const group=new THREE.Group();scene.add(group);
+
+      const bubbleGeo=new THREE.SphereGeometry(1,30,22);
+      const count=entry.kind==="multiverse"?16:7;
+      for(let i=0;i<count;i++){
+        const material=new THREE.MeshPhysicalMaterial({
+          color:i%3===0?0x6e83ff:(i%3===1?0x4cc6c4:0xe6b85d),
+          transparent:true,opacity:entry.kind==="multiverse"?.16:.13,
+          roughness:.12,transmission:.68,thickness:.7,ior:1.18,
+          wireframe:entry.kind==="report"&&i%2===0
+        });
+        const mesh=new THREE.Mesh(bubbleGeo,material);
+        const a=i*.9+0.7;
+        const radius=entry.kind==="multiverse"?2.2+(i%5)*.55:1.7+(i%4)*.4;
+        mesh.position.set(Math.cos(a)*radius,Math.sin(a*1.3)*2.5,-(i%6)*.65-1.2);
+        mesh.scale.setScalar(.26+(i%5)*.11);
+        group.add(mesh);
+      }
+
+      const rings=new THREE.Group();
+      for(let i=0;i<4;i++){
+        const ring=new THREE.Mesh(
+          new THREE.TorusGeometry(1.6+i*.62,.014,8,120),
+          new THREE.MeshBasicMaterial({color:i%2?0x5aa9c5:0xd1a14d,transparent:true,opacity:.28})
+        );
+        ring.rotation.x=1.0+i*.18;ring.rotation.z=i*.38;rings.add(ring);
+      }
+      group.add(rings);
+
+      const starGeo=new THREE.BufferGeometry();
+      const n=entry.kind==="multiverse"?650:320;
+      const arr=new Float32Array(n*3);
+      for(let i=0;i<n;i++){
+        arr[i*3]=(Math.random()-.5)*16;
+        arr[i*3+1]=(Math.random()-.5)*10;
+        arr[i*3+2]=-Math.random()*12;
+      }
+      starGeo.setAttribute("position",new THREE.BufferAttribute(arr,3));
+      const stars=new THREE.Points(starGeo,new THREE.PointsMaterial({color:0xffffff,size:.022,transparent:true,opacity:.42}));
+      scene.add(stars);
+
+      const warm=new THREE.PointLight(0xffc56f,14,24);warm.position.set(-3,2,5);scene.add(warm);
+      const cool=new THREE.PointLight(0x7894ff,18,24);cool.position.set(4,-2,6);scene.add(cool);
+
+      function resize(){
+        const r=host.getBoundingClientRect();
+        const w=Math.max(1,r.width),h=Math.max(1,r.height);
+        renderer.setPixelRatio(Math.min(devicePixelRatio,1.25));
+        renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();
+      }
+      resize();
+      scenes.push({entry,renderer,scene,camera,group,rings,stars,host,resize,phase:Math.random()*6});
+    }
+    canvases.forEach(build);
+    addEventListener("resize",()=>scenes.forEach(s=>s.resize()),{passive:true});
+    const t0=performance.now();
+    function tick(t){
+      const time=(t-t0)*.00022;
+      for(const s of scenes){
+        const r=s.host.getBoundingClientRect();
+        const local=(innerHeight-r.top)/(innerHeight+r.height);
+        const scroll=Math.max(0,Math.min(1,local));
+        s.group.rotation.y=time+s.phase+(state.pointer.x-.5)*.18+scroll*.95;
+        s.group.rotation.x=(state.pointer.y-.5)*-.12+(scroll-.5)*.18;
+        s.rings.rotation.z=time*.35+scroll*.9;
+        s.rings.rotation.y=time*.22-scroll*.45;
+        s.camera.position.z=(s.entry.kind==="multiverse"?9:7.5)-scroll*.7;
+        s.stars.rotation.z=time*.035;
+        s.renderer.render(s.scene,s.camera);
+      }
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }catch(err){console.warn("Secondary 3D scenes unavailable",err)}
+})();
