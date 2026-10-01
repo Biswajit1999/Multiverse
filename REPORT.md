@@ -116,6 +116,10 @@ up to model-dependent factors.
 
 **Interpretation:** inflation + reheating can explain *how a cold vacuum-dominated phase becomes a hot expanding universe*. It does not yet explain why the inflating state existed in the first place.
 
+![Inflation to structure research sketch](docs/assets/images/08_inflation_to_structure_notebook.png)
+
+*Conceptual research illustration of the inflation → reheating → hot-Big-Bang → CMB → structure chain. The image is explanatory; quantitative claims are supported by the equations and code in this report.*
+
 ### 2.2 False-vacuum decay and bubble nucleation
 
 A scalar potential can possess a metastable false vacuum. Semiclassical vacuum decay proceeds through bubble nucleation. Schematically,
@@ -129,6 +133,10 @@ where $B$ is the Euclidean bounce-action difference between the instanton and fa
 If the surrounding false vacuum expands sufficiently rapidly while bubbles nucleate locally, inflation can continue globally while ending in individual regions. This is one route to **eternal inflation** and to the idea of many causally disconnected reheating regions.
 
 This is a theoretical possibility, not an observation of other universes.
+
+![False-vacuum decay and bubble nucleation](docs/assets/images/04_false_vacuum_decay.png)
+
+*Conceptual illustration of false-vacuum decay and bubble nucleation. It is not observational evidence for another universe.*
 
 ### 2.3 Quantum cosmology
 
@@ -223,6 +231,10 @@ It can arise in specific extensions:
 
 A scientifically serious project must therefore use the word *multiverse* with a model label, not as a single theory.
 
+![If universes are many](docs/assets/images/17_if_universes_are_many.png)
+
+*Conceptual analogy only. The figure explores how a many-universe picture might be visualized without treating the analogy as empirical evidence.*
+
 ---
 
 ## 5. Perturbations and observational constraints
@@ -254,6 +266,10 @@ $$
 Planck 2018 measured a scalar spectral index close to but below unity, $n_s=0.9649\pm0.0042$ (68% confidence in the quoted analysis). BICEP/Keck data through the 2018 observing season constrained $r_{0.05}<0.036$ at 95% confidence.
 
 Any proposed pre-hot-Big-Bang mechanism must ultimately connect to observables of this kind.
+
+![Inflation constraints visual guide](docs/assets/images/05_ns_r_constraints.png)
+
+*Illustrative guide to the model-selection logic in the \(n_s-r\) plane. Numerical comparisons in the repository should be treated as the quantitative reference, not the artwork itself.*
 
 Potential discriminants include:
 
@@ -531,3 +547,7 @@ The research problem is therefore now expressed operationally:
 > For each proposed extension of the hot Big Bang, derive its assumptions and equations, solve the relevant boundary/initial-value problem, calculate observable predictions, specify failure conditions, and compare them with data and competing models.
 
 That is the completed v1.0 framework. The remaining frontier is genuine open research rather than missing repository structure.
+
+![Current research verdict](docs/assets/images/20_current_research_verdict.png)
+
+*Visual synthesis of the present project conclusion: inflation followed by reheating is the strongest working bridge implemented here, while the deeper origin and multiverse questions remain open.*
