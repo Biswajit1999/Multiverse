@@ -4,6 +4,11 @@
 
 [**Open the live 3D research story →**](https://biswajit1999.github.io/Multiverse/)
 
+[**Read the chapter-based LaTeX research monograph (PDF) →**](https://biswajit1999.github.io/Multiverse/report/Multiverse_Cosmology_Lab_Report.pdf)
+
+**Author:** [Biswajit Jana](https://biswajit1999.github.io/Biswajit_Jana.github.io/) · [LinkedIn](https://www.linkedin.com/in/biswajit-jana-27011a151/) · [GitHub](https://github.com/Biswajit1999)
+
+
 > # Working answer: **INFLATION**
 >
 > **More precisely:** inflation followed by reheating is the strongest testable bridge found in this project between a pre-hot-Big-Bang state and the hot, structured universe we observe. That is an author synthesis from the implemented theory + simulations + current data — not proof that inflation is the unique history of nature.
