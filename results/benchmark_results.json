@@ -1,0 +1,10 @@
+{
+  "release": "1.0.0",
+  "inflation": [
+    {"model":"quadratic","N":60.0,"phi_end":1.4142135623727443,"phi_star":15.556349186104013,"ns":0.9669421487603304,"r":0.13223140495867827,"z_cmb_2025":-0.3930785123967481,"z_cmb_desi_2025":-2.0199487033343595},
+    {"model":"starobinsky","N":60.0,"phi_end":0.9401775470003019,"phi_star":5.453151560279705,"ns":0.9678271379260114,"r":0.002963890999452231,"z_cmb_2025":-0.11651939812142714,"z_cmb_desi_2025":-1.7147800255133157}
+  ],
+  "vacuum_decay_toy": {"phi_true":-1.0122731310326816,"phi_top":0.025015654370327652,"phi_false":0.9872574766623539,"V_true":0.14984565584046042,"V_top":0.4253125977785497,"V_false":0.19984174638098987,"sigma_estimate":1.0574979679507894,"flat_thin_wall_radius":63.454839559516735,"flat_thin_wall_B":1333348.087596016,"hawking_moss_B":628.3576819281185},
+  "quantum_cosmology_toy": {"lambda_eff":0.2,"wkb_barrier_action":1.666666666666663},
+  "notes": ["Compressed observational constraints are diagnostics, not full likelihoods.","Vacuum-decay values are for the repository toy potential, not Standard Model vacuum decay.","The Wheeler-DeWitt result is a minisuperspace toy calculation."]
+}
