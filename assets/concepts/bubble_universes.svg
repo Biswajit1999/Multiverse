@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+<title id="title">Conceptual eternal-inflation bubble landscape</title>
+<desc id="desc">Scientific schematic of separated reheating regions embedded in an inflating background, with causal-horizon rings and field contours. Conceptual illustration, not observational evidence.</desc>
+<defs>
+  <radialGradient id="bg" cx="50%" cy="45%" r="75%">
+    <stop offset="0%" stop-color="#182343"/>
+    <stop offset="55%" stop-color="#0b1329"/>
+    <stop offset="100%" stop-color="#050913"/>
+  </radialGradient>
+  <radialGradient id="bubble" cx="42%" cy="38%" r="64%">
+    <stop offset="0%" stop-color="#fff6d7"/>
+    <stop offset="10%" stop-color="#f5c77c"/>
+    <stop offset="23%" stop-color="#4e84c4"/>
+    <stop offset="58%" stop-color="#17284b"/>
+    <stop offset="88%" stop-color="#0b1429"/>
+    <stop offset="100%" stop-color="#7d8fd3" stop-opacity=".35"/>
+  </radialGradient>
+  <linearGradient id="field" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#777bc9" stop-opacity=".06"/>
+    <stop offset="50%" stop-color="#8ea8e8" stop-opacity=".22"/>
+    <stop offset="100%" stop-color="#5d64a9" stop-opacity=".05"/>
+  </linearGradient>
+  <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+    <feGaussianBlur stdDeviation="7" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="18"/>
+  </filter>
+</defs>
+<rect width="1400" height="900" fill="url(#bg)"/>
+<g fill="none" stroke="url(#field)" stroke-width="2">
+  <path d="M-60 190 C230 60 440 320 710 180 C970 45 1190 120 1470 15"/>
+  <path d="M-70 300 C200 150 470 410 760 250 C1005 115 1210 255 1470 160"/>
+  <path d="M-80 440 C205 300 470 545 735 405 C1010 260 1215 420 1485 300"/>
+  <path d="M-70 595 C210 470 485 690 760 545 C1000 420 1245 565 1485 465"/>
+  <path d="M-80 745 C180 635 430 820 720 690 C1020 545 1230 720 1485 615"/>
+</g>
+<g opacity=".26" fill="#8088cf" filter="url(#soft)">
+  <ellipse cx="265" cy="220" rx="270" ry="75"/>
+  <ellipse cx="890" cy="310" rx="350" ry="92"/>
+  <ellipse cx="595" cy="680" rx="410" ry="85"/>
+</g>
+
+<!-- Major reheating regions -->
+<g>
+  <circle cx="280" cy="370" r="200" fill="url(#bubble)" stroke="#a7b6f2" stroke-width="3" opacity=".96"/>
+  <circle cx="280" cy="370" r="150" fill="none" stroke="#d7ddff" stroke-opacity=".58" stroke-width="2" stroke-dasharray="10 14"/>
+  <circle cx="280" cy="370" r="105" fill="none" stroke="#d7ddff" stroke-opacity=".36" stroke-width="2" stroke-dasharray="8 16"/>
+  <ellipse cx="280" cy="370" rx="82" ry="28" fill="none" stroke="#ffd996" stroke-width="4" transform="rotate(-16 280 370)" filter="url(#glow)"/>
+  <ellipse cx="280" cy="370" rx="56" ry="18" fill="none" stroke="#9ac8ff" stroke-width="2.5" transform="rotate(18 280 370)"/>
+</g>
+<g>
+  <circle cx="985" cy="545" r="265" fill="url(#bubble)" stroke="#a7b6f2" stroke-width="3" opacity=".98"/>
+  <circle cx="985" cy="545" r="202" fill="none" stroke="#d7ddff" stroke-opacity=".58" stroke-width="2" stroke-dasharray="12 16"/>
+  <circle cx="985" cy="545" r="143" fill="none" stroke="#d7ddff" stroke-opacity=".36" stroke-width="2" stroke-dasharray="9 18"/>
+  <ellipse cx="985" cy="545" rx="110" ry="38" fill="none" stroke="#ffd996" stroke-width="4" transform="rotate(-20 985 545)" filter="url(#glow)"/>
+  <ellipse cx="985" cy="545" rx="74" ry="23" fill="none" stroke="#9ac8ff" stroke-width="2.5" transform="rotate(14 985 545)"/>
+</g>
+<g>
+  <circle cx="1040" cy="180" r="125" fill="url(#bubble)" stroke="#a7b6f2" stroke-width="2.5" opacity=".96"/>
+  <circle cx="1040" cy="180" r="82" fill="none" stroke="#d7ddff" stroke-opacity=".45" stroke-width="1.8" stroke-dasharray="8 12"/>
+  <ellipse cx="1040" cy="180" rx="52" ry="17" fill="none" stroke="#ffd996" stroke-width="3" transform="rotate(-12 1040 180)"/>
+</g>
+
+<!-- Smaller nucleation regions -->
+<g fill="url(#bubble)" stroke="#9aa9e6" stroke-width="1.8">
+  <circle cx="560" cy="190" r="54"/><circle cx="675" cy="330" r="38"/><circle cx="520" cy="520" r="48"/>
+  <circle cx="760" cy="120" r="31"/><circle cx="1260" cy="320" r="46"/><circle cx="1260" cy="710" r="62"/>
+  <circle cx="440" cy="760" r="74"/><circle cx="135" cy="720" r="42"/><circle cx="1180" cy="95" r="28"/>
+</g>
+
+<!-- Sparse stars / field fluctuations -->
+<g fill="#dce6ff">
+  <circle cx="85" cy="100" r="2"/><circle cx="175" cy="140" r="1.7"/><circle cx="350" cy="85" r="1.8"/>
+  <circle cx="470" cy="120" r="1.4"/><circle cx="620" cy="75" r="2"/><circle cx="845" cy="65" r="1.6"/>
+  <circle cx="930" cy="110" r="1.4"/><circle cx="1190" cy="230" r="1.8"/><circle cx="1320" cy="150" r="1.5"/>
+  <circle cx="1380" cy="420" r="2"/><circle cx="1210" cy="500" r="1.4"/><circle cx="775" cy="470" r="1.6"/>
+  <circle cx="630" cy="650" r="1.7"/><circle cx="240" cy="650" r="1.4"/><circle cx="70" cy="520" r="1.7"/>
+</g>
+
+<g font-family="Inter,Arial,sans-serif" fill="#e8edf9">
+  <text x="55" y="70" font-size="30" font-weight="700">Eternal-inflation landscape — conceptual schematic</text>
+  <text x="58" y="104" font-size="17" fill="#aebbd7">Separated reheating regions, causal horizons, and an inflating background</text>
+  <text x="1070" y="852" font-size="15" fill="#9eabc7">Conceptual illustration — not observational evidence</text>
+</g>
+</svg>
