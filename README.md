@@ -2,9 +2,19 @@
 
 **Author: Biswajit Jana · v1.0.0 · 2026**
 
+[**🌌 Open the live research website →**](https://biswajit1999.github.io/Multiverse/)
+
+> ## One-word working answer: **Inflation**
+>
+> In this project, **inflation followed by reheating** is the leading working mechanism for producing the hot Big Bang because it connects pre-hot-Big-Bang dynamics to calculable observables. This is a research conclusion, not proof of an absolute beginning or direct evidence for a multiverse.
+
+![Origin-model comparison](assets/concepts/pre_big_bang_scenarios.jpg)
+
 A research-driven computational project asking a precise question:
 
 > **What physical mechanisms could generate the hot Big Bang state, what do their equations predict, and can observations distinguish them?**
+
+The project combines theory, numerical simulations, public CMB data, current inflation constraints and explicit failure conditions. The public website is written as an editorial research notebook rather than a generic project landing page.
 
 This repository does **not** assume that a multiverse exists. It treats eternal inflation, false-vacuum bubbles, quantum-cosmology boundary conditions, bounces and cyclic histories as competing model classes whose assumptions and consequences can be calculated.
 
@@ -210,7 +220,7 @@ The observational layer stores versioned 2026 compressed constraints instead of 
 
 ![2026 inflation constraints](assets/figures/phase8_constraints_2026.svg)
 
-The static interactive research interface is maintained in [docs/](docs/) and includes a live slow-roll e-fold explorer.
+The live editorial research interface is deployed at **https://biswajit1999.github.io/Multiverse/**. It includes a live slow-roll explorer and a CMB TT chart built from the NASA/LAMBDA February 2026 public plotting table (Planck 2018 + ACT DR6 data).
 
 ## What "before the Big Bang" can mean
 
