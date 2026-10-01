@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc"><title id="title">Cosmic origin model map</title><desc id="desc">Scientific schematic generated from the equations and model structure used in the repository.</desc><rect width="100%" height="100%" fill="#ffffff"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#333"/></marker></defs>
+<text x="600" y="48" text-anchor="middle" font-family="Arial" font-size="30" font-weight="700">How can a hot Big Bang state arise?</text>
+<text x="600" y="80" text-anchor="middle" font-family="Arial" font-size="16">Competing model classes — not a claim that any one is established</text>
+
+<g font-family="Arial" text-anchor="middle">
+<rect x="430" y="115" width="340" height="74" rx="12" fill="#f3f4f6" stroke="#222"/>
+<text x="600" y="148" font-size="20" font-weight="700">Past boundary / earlier phase</text>
+<text x="600" y="173" font-size="14">currently model-dependent</text>
+
+<rect x="45" y="280" width="225" height="92" rx="10" fill="#fafafa" stroke="#333"/>
+<text x="158" y="315" font-size="18" font-weight="700">Inflation</text>
+<text x="158" y="342" font-size="14">scalar-field acceleration</text>
+
+<rect x="335" y="280" width="225" height="92" rx="10" fill="#fafafa" stroke="#333"/>
+<text x="448" y="315" font-size="18" font-weight="700">False vacuum</text>
+<text x="448" y="342" font-size="14">bubble nucleation</text>
+
+<rect x="625" y="280" width="225" height="92" rx="10" fill="#fafafa" stroke="#333"/>
+<text x="738" y="315" font-size="18" font-weight="700">Bounce / cyclic</text>
+<text x="738" y="342" font-size="14">contracting predecessor</text>
+
+<rect x="915" y="280" width="240" height="92" rx="10" fill="#fafafa" stroke="#333"/>
+<text x="1035" y="315" font-size="18" font-weight="700">Quantum boundary</text>
+<text x="1035" y="342" font-size="14">wave-function proposal</text>
+
+<rect x="390" y="455" width="420" height="94" rx="12" fill="#f3f4f6" stroke="#111" stroke-width="2"/>
+<text x="600" y="493" font-size="22" font-weight="700">Hot radiation-dominated universe</text>
+<text x="600" y="521" font-size="14">the hot Big Bang regime</text>
+
+<rect x="390" y="600" width="420" height="60" rx="10" fill="#fafafa" stroke="#333"/>
+<text x="600" y="636" font-size="17">BBN → CMB → structure formation → present universe</text>
+</g>
+
+<g stroke="#333" stroke-width="2.5" fill="none" marker-end="url(#arrow)">
+<path d="M520 190 C420 225 260 235 180 278"/>
+<path d="M565 190 C520 225 475 240 455 278"/>
+<path d="M635 190 C675 225 710 240 730 278"/>
+<path d="M680 190 C790 225 930 240 1010 278"/>
+<path d="M158 373 C250 420 380 440 470 454"/>
+<path d="M448 373 C485 410 525 435 560 454"/>
+<path d="M738 373 C700 410 665 435 640 454"/>
+<path d="M1035 373 C930 420 820 440 730 454"/>
+<path d="M600 550 L600 598"/>
+</g>
+<text x="210" y="420" font-family="Arial" font-size="13">reheating</text>
+<text x="415" y="420" font-family="Arial" font-size="13">thermalized bubble</text>
+<text x="760" y="420" font-family="Arial" font-size="13">bounce / transition</text>
+<text x="970" y="420" font-family="Arial" font-size="13">boundary condition + dynamics</text>
+</svg>
