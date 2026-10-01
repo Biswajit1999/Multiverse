@@ -1,0 +1,47 @@
+name: Build LaTeX research report
+
+on:
+  push:
+    paths:
+      - "docs/report/Multiverse_Cosmology_Lab_Report.tex"
+      - "docs/assets/images/**"
+      - ".github/workflows/build-report.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX report
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: docs/report
+          root_file: Multiverse_Cosmology_Lab_Report.tex
+
+      - name: Compress PDF for the website
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ghostscript
+          mv docs/report/Multiverse_Cosmology_Lab_Report.pdf docs/report/Multiverse_Cosmology_Lab_Report_full.pdf
+          gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.6 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH \
+            -sOutputFile=docs/report/Multiverse_Cosmology_Lab_Report.pdf \
+            docs/report/Multiverse_Cosmology_Lab_Report_full.pdf
+          rm docs/report/Multiverse_Cosmology_Lab_Report_full.pdf
+
+      - name: Commit generated PDF
+        run: |
+          git config user.name "Biswajit Jana"
+          git config user.email "49089568+Biswajit1999@users.noreply.github.com"
+          git add docs/report/Multiverse_Cosmology_Lab_Report.pdf
+          if git diff --cached --quiet; then
+            echo "PDF unchanged"
+            exit 0
+          fi
+          git commit -m "Build LaTeX research report PDF [skip ci]"
+          git push
