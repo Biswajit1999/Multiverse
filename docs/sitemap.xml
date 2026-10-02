@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://biswajit1999.github.io/Multiverse/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://biswajit1999.github.io/Multiverse/assets/images/01_hero_main.png</image:loc>
+      <image:title>Multiverse Cosmology Lab — inflation, reheating, CMB and model-dependent multiverse cosmology</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biswajit1999.github.io/Multiverse/learn/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://biswajit1999.github.io/Multiverse/assets/images/12_cosmic_timeline_to_the_multiverse.png</image:loc>
+      <image:title>Multiverse Cosmology Study Guide</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biswajit1999.github.io/Multiverse/learn/what-is-multiverse.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://biswajit1999.github.io/Multiverse/assets/images/02_multiverse_perspective_infographic.png</image:loc>
+      <image:title>What is the multiverse?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biswajit1999.github.io/Multiverse/learn/big-bang-inflation-reheating.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://biswajit1999.github.io/Multiverse/assets/images/12_cosmic_timeline_to_the_multiverse.png</image:loc>
+      <image:title>Big Bang, inflation and reheating explained</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biswajit1999.github.io/Multiverse/learn/cmb-evidence-inflation.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://biswajit1999.github.io/Multiverse/assets/images/06_cmb_explainer.png</image:loc>
+      <image:title>CMB evidence for inflation</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biswajit1999.github.io/Multiverse/learn/eternal-inflation-multiverse.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://biswajit1999.github.io/Multiverse/assets/images/17_if_universes_are_many.png</image:loc>
+      <image:title>Eternal inflation and the multiverse</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biswajit1999.github.io/Multiverse/learn/vacuum-decay-bubble-universes.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://biswajit1999.github.io/Multiverse/assets/images/04_false_vacuum_decay.png</image:loc>
+      <image:title>Vacuum decay and bubble universes</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biswajit1999.github.io/Multiverse/learn/bounce-cyclic-quantum-cosmology.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://biswajit1999.github.io/Multiverse/assets/images/18_four_cosmic_paths.png</image:loc>
+      <image:title>Bounce, cyclic and quantum cosmology</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biswajit1999.github.io/Multiverse/learn/horizons-outside-universe.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://biswajit1999.github.io/Multiverse/assets/images/11_beyond_our_bubble.png</image:loc>
+      <image:title>Is there an outside the universe?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://biswajit1999.github.io/Multiverse/learn/glossary.html</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://biswajit1999.github.io/Multiverse/report/Multiverse_Cosmology_Lab_Report.pdf</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>
