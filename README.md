@@ -6,6 +6,8 @@
 
 [**Read the chapter-based LaTeX research monograph (PDF) →**](https://biswajit1999.github.io/Multiverse/report/Multiverse_Cosmology_Lab_Report.pdf)
 
+[**Open the searchable multiverse cosmology study guide →**](https://biswajit1999.github.io/Multiverse/learn/)
+
 **Author:** [Biswajit Jana](https://biswajit1999.github.io/Biswajit_Jana.github.io/) · [LinkedIn](https://www.linkedin.com/in/biswajit-jana-27011a151/) · [GitHub](https://github.com/Biswajit1999)
 
 
@@ -29,6 +31,22 @@ Instead of ending with a catalogue of theories, this repository asks a sequence 
 6. **What observation would force the working conclusion to change?**
 
 Read the full [question-ledger](RESEARCH_QUESTIONS.md) or the [integrated report](REPORT.md).
+
+## Study guide and search topics
+
+The web version is now organized as a crawlable learning path for readers searching questions such as **what is the multiverse**, **what happened before the Big Bang**, **how inflation and reheating work**, **whether the CMB supports inflation**, **how eternal inflation produces pocket universes**, **what vacuum decay means**, and **whether there can be an outside to the universe**.
+
+Start here: [Multiverse Cosmology Study Guide](https://biswajit1999.github.io/Multiverse/learn/)
+
+Core chapters:
+- [What is the multiverse?](https://biswajit1999.github.io/Multiverse/learn/what-is-multiverse.html)
+- [Big Bang, inflation and reheating](https://biswajit1999.github.io/Multiverse/learn/big-bang-inflation-reheating.html)
+- [CMB evidence for inflation](https://biswajit1999.github.io/Multiverse/learn/cmb-evidence-inflation.html)
+- [Eternal inflation and the multiverse](https://biswajit1999.github.io/Multiverse/learn/eternal-inflation-multiverse.html)
+- [Vacuum decay and bubble universes](https://biswajit1999.github.io/Multiverse/learn/vacuum-decay-bubble-universes.html)
+- [Bounce, cyclic and quantum cosmology](https://biswajit1999.github.io/Multiverse/learn/bounce-cyclic-quantum-cosmology.html)
+- [Horizons and “outside the universe”](https://biswajit1999.github.io/Multiverse/learn/horizons-outside-universe.html)
+- [Plain-language cosmology glossary](https://biswajit1999.github.io/Multiverse/learn/glossary.html)
 
 ## Visual research story
 
