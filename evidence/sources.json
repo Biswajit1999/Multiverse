@@ -1,0 +1,46 @@
+{
+  "project": "Multiverse Cosmology Lab",
+  "repository": "https://github.com/Biswajit1999/Multiverse",
+  "files": [
+    {
+      "label": "Constraints 2026",
+      "path": "data/constraints_2026.json",
+      "role": "Data and provenance"
+    },
+    {
+      "label": "Benchmark results",
+      "path": "results/benchmark_results.json",
+      "role": "Tables and numerical results"
+    },
+    {
+      "label": "Bounce vs singularity",
+      "path": "assets/figures/bounce_vs_singularity.svg",
+      "role": "Figures"
+    },
+    {
+      "label": "Cosmic origin model map",
+      "path": "assets/figures/cosmic_origin_model_map.svg",
+      "role": "Figures"
+    },
+    {
+      "label": "Inflation slow roll",
+      "path": "assets/figures/inflation_slow_roll.svg",
+      "role": "Figures"
+    },
+    {
+      "label": "Phase4 horizon engine",
+      "path": "assets/figures/phase4_horizon_engine.svg",
+      "role": "Figures"
+    },
+    {
+      "label": "Phase5 mukhanov sasaki",
+      "path": "assets/figures/phase5_mukhanov_sasaki.svg",
+      "role": "Figures"
+    },
+    {
+      "label": "Phase5 ns r models",
+      "path": "assets/figures/phase5_ns_r_models.svg",
+      "role": "Figures"
+    }
+  ]
+}

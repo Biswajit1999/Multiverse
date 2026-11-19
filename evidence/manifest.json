@@ -1,0 +1,97 @@
+{
+  "schema": 1,
+  "project": "Multiverse Cosmology Lab",
+  "repository": "https://github.com/Biswajit1999/Multiverse",
+  "files": [
+    {
+      "label": "Constraints 2026",
+      "path": "data/constraints_2026.json",
+      "role": "Data and provenance",
+      "bytes": 647,
+      "sha256": "fc446241f1452655c52f1080df78fc361cc74ad6153906a17be233e98adcf37a",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "generated_for_project_release",
+        "benchmarks"
+      ],
+      "arrays": {
+        "benchmarks": 3
+      }
+    },
+    {
+      "label": "Benchmark results",
+      "path": "results/benchmark_results.json",
+      "role": "Tables and numerical results",
+      "bytes": 1168,
+      "sha256": "a8a15b953e60717f8ba83121c91040310b06bacbe1a9e63e51130a5132979c03",
+      "hash_basis": "LF-normalised text",
+      "format": "JSON",
+      "keys": [
+        "release",
+        "inflation",
+        "vacuum_decay_toy",
+        "quantum_cosmology_toy",
+        "notes"
+      ],
+      "arrays": {
+        "inflation": 2,
+        "notes": 3
+      }
+    },
+    {
+      "label": "Bounce vs singularity",
+      "path": "assets/figures/bounce_vs_singularity.svg",
+      "role": "Figures",
+      "bytes": 8964,
+      "sha256": "80e99b22a55c35d52de264115bdd6aa8d8aa975470d8d459200cb9370a68c4cc",
+      "hash_basis": "LF-normalised text",
+      "format": "SVG"
+    },
+    {
+      "label": "Cosmic origin model map",
+      "path": "assets/figures/cosmic_origin_model_map.svg",
+      "role": "Figures",
+      "bytes": 3271,
+      "sha256": "009947805d5abfd6cd6041228ed60d9d60dd59cc70d303c7d70aa07c34895e9a",
+      "hash_basis": "LF-normalised text",
+      "format": "SVG"
+    },
+    {
+      "label": "Inflation slow roll",
+      "path": "assets/figures/inflation_slow_roll.svg",
+      "role": "Figures",
+      "bytes": 5107,
+      "sha256": "754a249d67523ff33a5462ab779453dd29d2ca62ae1a9d75b4f4a00901c1a8e0",
+      "hash_basis": "LF-normalised text",
+      "format": "SVG"
+    },
+    {
+      "label": "Phase4 horizon engine",
+      "path": "assets/figures/phase4_horizon_engine.svg",
+      "role": "Figures",
+      "bytes": 1712,
+      "sha256": "389163747a23bd4fc0f1ee724004298d361014df709193b91e587a43768764fb",
+      "hash_basis": "LF-normalised text",
+      "format": "SVG"
+    },
+    {
+      "label": "Phase5 mukhanov sasaki",
+      "path": "assets/figures/phase5_mukhanov_sasaki.svg",
+      "role": "Figures",
+      "bytes": 1728,
+      "sha256": "cc1568a28eaf39a550ca8f4a341a14c493d23ea1f4b2dca2f32857adcdb78547",
+      "hash_basis": "LF-normalised text",
+      "format": "SVG"
+    },
+    {
+      "label": "Phase5 ns r models",
+      "path": "assets/figures/phase5_ns_r_models.svg",
+      "role": "Figures",
+      "bytes": 3828,
+      "sha256": "043cf33e15bc3c7ea85615f94d9fd13f0ca5e7211cb7fcfa01e2a006bfc3e9dc",
+      "hash_basis": "LF-normalised text",
+      "format": "SVG"
+    }
+  ]
+}
