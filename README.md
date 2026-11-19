@@ -381,3 +381,16 @@ See [references/references.bib](references/references.bib).
 The repository is presented as a scientific research record: equations, assumptions, code, tests, figures, references, limitations, and versioned results are kept together.
 
 The purpose of this repository is to make the reasoning reproducible: equations, assumptions, numerical experiments, citations, tests and failure modes are kept together rather than presenting speculative cosmology as settled fact.
+
+## Research evidence and downloads
+
+- [Browse the evidence file index](evidence/manifest.json) or open `evidence.html` from the checkout to inspect previews and downloads.
+- Start with [Benchmark results](results/benchmark_results.json), [Constraints 2026](data/constraints_2026.json).
+- [View Bounce vs singularity](assets/figures/bounce_vs_singularity.svg).
+
+Run these commands from the repository root to rebuild the published evidence.
+
+```sh
+python scripts/evidence_catalog.py
+python scripts/render_evidence_page.py
+```
